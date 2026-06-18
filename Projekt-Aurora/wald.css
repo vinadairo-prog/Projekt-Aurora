@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ocupa al menos el 100% de la pantalla */
-    background-image: url(../Images_Wald/portada_2.jpg);
+    background-image: url("../Projekt-Aurora/Images-Projekt-Aurora/portada_2.jpg");
     background-attachment: fixed; /* La imagen no se mueve al hacer scroll */
     background-size: cover;
     font-family: 'Urbanist', sans-serif;
