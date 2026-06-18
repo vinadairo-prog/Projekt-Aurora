@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- TRUCO PARA QUE EL FOOTER SE PEGUE ABAJO --- */
+html, body {
+    height: 100%; /* Necesario para calcular el fondo */
+    margin: 0; /* o cambiarlo a auto si se vuelve necesario */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos el 100% de la pantalla */
+    background-image: url("../Projekt-Aurora/Images-Projekt-Aurora/portada_2.jpg");
+    background-attachment: fixed; /* La imagen no se mueve al hacer scroll */
+    background-size: cover;
+    font-family: 'Urbanist', sans-serif;
+        
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+
+/* --- NAVBAR TUNING (Ajustes de navegación) --- */
+
+/* 
+   Asegura que cuando el menú se despliegue en móvil, 
+   tenga un fondo semi-transparente para poder leer los links.
+*/
+.navbar-collapse {
+    background: rgba(0, 0, 0, 0.5); /* Negro muy transparente */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* 
+   'navbar-nav' extendido:
+   Hacemos que los links ocupen su espacio y se separen elegantemente.
+*/
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Distribuye espacio entre elementos */
+    gap: 15px;
+}
+
+.nav-link {
+    color: #e5e4e2 !important; /* Plata base */
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    transition: 0.4s ease;
+   
+}
+
+.nav-link:hover {
+    color: #ffffff !important; /* Blanco brillante */ /* (o bien) color: #40e0d0 !important; */ 
+    /* Halo de luz plata: desenfoque de 12px para el efecto místico */
+    text-shadow: 0 0 12px rgba(229, 228, 226, 0.6) !important; /* (o bien) rgba(64, 224, 208, 0.6); */
+    transform: scale(1.05); /* Un pequeño aumento de tamaño para dar vida */
+}
+
+/* 1. El botón (el cuadradito exterior) */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Borde sutil blanco */
+    transition: all 0.4s ease; /* Para que el brillo sea suave al tocarlo */
+    padding: 0.25rem 0.75rem;
+}
+
+/* 2. Las 3 rayitas (el icono interior) - SIEMPRE BLANCAS Y CON BRILLO */
+.navbar-toggler-icon {
+    /* Invertimos a blanco y añadimos un resplandor (drop-shadow) */
+    filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
+}
+
+/* 3. Efecto al pasar el mouse o tocarlo (Luminosidad extra) */
+.navbar-toggler:hover {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Resplandor exterior */
+    background-color: rgba(255, 255, 255, 0.1); /* Un toque de luz de fondo */
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    /* En el hover, el resplandor de las rayitas se hace más intenso */
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 1)) !important;
+}
+
+.content-wrapper {
+    flex: 1 0 auto; /* Esto empuja al footer hacia abajo del todo */
+}
+
+a {
+    color: whitesmoke !important;
+    transition: 0.3s;
+}
+
+/* Estilo para los links del cuerpo */
+.aurora-link {
+    color: #e5e4e2 !important; /* o bien color: #40e0d0 !important; */
+    text-decoration: none !important;
+    transition: all 0.4s ease;
+    display: block;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03); /* Un fondo casi invisible */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+/* Efecto al pasar el mouse - ¡Luminosidad! */
+.aurora-link:hover, .aurora-link:hover h2, .aurora-link:hover h5 {
+    color: white !important; /* Adiós al azul de Bootstrap */
+    background: rgba(255, 255, 255, 0.1); /* Se aclara un poco */
+    transform: translateY(-8px); /* Flota un poquito hacia arriba */
+    /* text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(64, 224, 208, 0.4); */
+    box-shadow: 0 10px 30px rgba(64, 224, 208, 0.3);
+    text-shadow: 0 0 15px rgba(64, 224, 208, 0.8) !important;
+}
+
+/*  LOS ENCABEZADOS DE SECCIÓN Y BOTONES (Elegantes / Ópera) */
+h2, h4, .aurora-link h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); */
+    
+}
+/* --- TYPOGRAFIE KONZEPT (Concepto Tipográfico) --- */
+
+/*  EL LOGO Y TÍTULO PRINCIPAL (Majestuoso) */
+.navbar-brand, .display-4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500; 
+    letter-spacing: 10px;
+  
+}
+
+.display-4 {
+    font-size: 6rem; /* Un pelín más grande para que sea el rey de la pantalla */
+}
+
+.jumbotron, footer {
+    /* 
+       Gradiente transparente: de un verde bosque a un aguamarina, RGBA responde a las iniciales en inglés de los canales de color. Cada posición dentro del paréntesis modifica un parámetro específico:Primera posición (R - Red / Rojo):  Su valor va desde 0 (sin rojo) hasta 255 (máximo rojo).Segunda posición (G - Green / Verde): Su valor va desde 0 hasta 255.Tercera posición (B - Blue / Azul):  Su valor va desde 0 hasta 255.Cuarta posición (A - Alpha / Opacidad): Controla la transparencia del color. Su valor es un número decimal que va desde 0.0 (totalmente invisible/transparente) hasta 1.0 (totalmente sólido/opaco).
+       ÄNDERUNG: Hemos bajado los valores Alpha (el último número) para más transparencia.
+       0.2 -> Mancha central (luz tenue)
+       0.4 -> Transición verde (más cristalina)
+       0.6 -> Bordes oscuros (deja pasar más la imagen de fondo)
+    */
+    background: radial-gradient(circle at center, 
+        rgba(255, 255, 255, 0.2) 0%,   
+        rgba(10, 35, 28, 0.3) 25%,    /*  a 0.3 o menos para aún más transparencia */
+        rgba(5, 15, 10, 0.5) 100%     /*  a 0.5 si quieres ver casi toda la foto */
+    ) !important;
+    
+    border: none;
+    color: white;
+    /* Mantenemos la sombra fuerte para que el texto blanco "flote" sobre la imagen */
+    text-shadow: 2px /* Horizontal */ 2px /* Vertical */ 8px /* Desenfoque */ rgba(0,0,0,0.6) /* Color negro suave */;
+    text-align: center;
+    padding: 2rem 1rem;
+    /* margin-bottom: 20px; */
+}
+
+/* --- ESTILOS ESPECÍFICOS DEL FOOTER Jerusha Web --- */
+footer {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0; /* ver si lo borro */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* forma moderna de margen o distancia entre los elementos para no usar margin y padding */
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* --- ARREGLAR COLOR DE LOS LINKS --- */
+.footer-link {
+    color: #e5e4e2 !important; /* Color plata/blanco */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    color: #40e0d0 !important;
+    
+    /* color: #ffffff !important; */
+    text-shadow: 2px /* Horizontal */ 2px /* Vertical */ 4px /* Desenfoque */ rgba(0,0,0,0.6) /* Color negro suave */ !important;
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255,255,255,1) !important;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
