@@ -181,7 +181,7 @@
             text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
         }
 
-     
+
         .main-content {
             flex-grow: 1;
             padding: 60px 0;
@@ -278,9 +278,158 @@
             opacity: 0.6;
             margin-top: 10px;
         }
+
+        /* Este es el balance perfecto: Oscuro para leer, transparente para ver la foto */
+        .glass-card {
+            background: rgba(20, 25, 35, 0.65) !important;
+            /* Azul/Gris oscuro */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(229, 228, 226, 0.2);
+            border-radius: 15px;
+            transition: 0.4s;
+            padding: 20px;
+            text-align: center;
+            color: #e5e4e2;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: rgba(30, 40, 60, 0.8) !important;
+            /* Se aclara un poco al tocarlo */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sobrescribimos el fondo del cuerpo para el Blog */
+#blog-page {
+    background: #022c22 !important; /* Verde pino muy profundo */
+}
+
+/* Tarjetas con cristal Aguamarina */
+.blog-card {
+    background: rgba(13, 148, 136, 0.15) !important; /* Aguamarina transparente */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(52, 211, 153, 0.3); /* Borde Verde Manzano suave */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateX(5px);
+    background: rgba(13, 148, 136, 0.25) !important;
+    border-color: #34d399; /* El borde brilla más en verde manzana */
+    box-shadow: 0 10px 25px rgba(4, 47, 46, 0.5);
+}
+
+/* Detalles estéticos */
+.badge-aquamarine {
+    background-color: rgba(45, 212, 191, 0.2);
+    color: #2dd4bf;
+    border: 1px solid #2dd4bf;
+}
+
+.text-mint {
+    color: #a7f3d0;
+}
+
+.btn-outline-mint {
+    color: #34d399;
+    border-color: #34d399;
+    background: transparent;
+}
+
+.btn-outline-mint:hover {
+    background: #34d399;
+    color: #022c22;
+}
+
+.blog-img-wrapper {
+    height: 100%;
+    min-height: 180px;
+    overflow: hidden;
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-card {
+    background: rgba(4, 47, 46, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(167, 243, 208, 0.1);
+}
+
+/* Un fondo verde pino-océano orgánico y oscuro */
+#blog-page {
+    background: #022c22 !important;
+}
+
+/* Las secciones no tienen fondo de tarjeta, se separan con líneas sutiles */
+.sequential-section {
+    border-bottom: 1px solid rgba(52, 211, 153, 0.1);
+    transition: all 0.4s ease;
+}
+
+.sequential-section:hover {
+    background: rgba(13, 148, 136, 0.05); /* Un reflejo aguamarina casi invisible al pasar el ratón */
+}
+
+/* El marco de la imagen es más artístico, como un cuadro de galería */
+.editorial-img-frame {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    position: relative;
+}
+
+.editorial-img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%) contrast(110%); /* Toque ligeramente artístico */
+}
+
+/* Meta información (fecha y categoría) */
+.blog-meta {
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.text-mint {
+    color: #34d399 !important; /* Verde manzana/menta vibrante */
+}
+
+/* Título del artículo */
+.editorial-title {
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* El enlace de leer más es solo un texto flotante elegante */
+.btn-editorial-link {
+    color: #67e8f9; /* Aguamarina brillante */
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-editorial-link:hover {
+    color: #34d399; /* Cambia a verde manzana */
+    padding-left: 10px; /* Pequeño efecto de desplazamiento */
+    text-decoration: none;
+}
     </style>
 </head>
 <!-- cambio -->
+
 <body>
 
     <!--  BARRA DE NAVEGACIÓN (Común) -->
@@ -374,84 +523,61 @@
     </header>
 
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
-    <main class="main-content">
-        <div class="container">
+   <main class="main-content" id="blog-page">
+    <div class="container my-5">
+        
+        <!-- CABECERA DE REVISTA -->
+        <div class="row text-center mb-5 pb-5" style="border-bottom: 1px solid rgba(52, 211, 153, 0.2);">
+            <div class="col-12">
+                <h1 class="hero-title" style="color: #67e8f9; font-size: 3.5rem; text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);">
+                    AURORA <span>MAGAZIN</span>
+                </h1>
+                <p class="lead text-light" style="font-family: 'Cinzel', serif; letter-spacing: 2px;">
+                    Gedanken über Technologie, Natur und urbanes Leben.
+                </p>
+            </div>
+        </div>
 
-            <!-- Aquí irá el contenido específico de cada una de las 16 páginas.
-                 Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="container mb-5">
-                        <div class="row text-center">
-                            <div class="col-md-3 mb-4">
-                                <a href="#asphalt" class="aurora-link">
-                                    <h5>Raus aus dem Asphalt</h5>
-                                    <p class="small text-light">Urbanización resiliente</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#clima" class="aurora-link">
-                                    <h5>Microclima</h5>
-                                    <p class="small text-light">Adiós a las islas de calor</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#projekte" class="aurora-link">
-                                    <h5>Wiener Projekte</h5>
-                                    <p class="small text-light">Neubaugasse & Cool Streets</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#salud" class="aurora-link">
-                                    <h5>Salud Urbana</h5>
-                                    <p class="small text-light">Bienestar y Biofilia</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div id="asphalt" class="row align-items-center mb-5 py-4"
-                            style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <div class="col-md-6">
-                                <h2 class="hero-title" style="font-size: 2.5rem;">Raus aus dem <span>Asphalt</span></h2>
-                                <p>Viena está transformando sus calles. Donde antes había hormigón gris, ahora brota el
-                                    suelo vivo. Con una inversión masiva en la "despavimentación", la ciudad busca
-                                    absorber el agua de lluvia y dar espacio a las raíces de 4,500 nuevos árboles
-                                    anuales.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="image-wrapper"
-                                    style="height: 300px; border: 1px solid rgba(64, 224, 208, 0.3);">
-                                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16304030609288169574"
-                                        alt="Neubaugasse Greening">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="salud" class="row align-items-center mb-5 py-4">
-                            <div class="col-md-6 order-md-2">
-                                <h2 class="hero-title" style="font-size: 2.5rem;">Salud <span>Urbana</span></h2>
-                                <p>No es solo estética; es supervivencia. Los árboles reducen el estrés térmico en hasta
-                                    12 grados en las aceras, previniendo problemas cardiovasculares relacionados con el
-                                    calor. El "Proyecto Aurora" explora cómo el verde urbano devuelve la calma a la
-                                    psique metropolitana.</p>
-                            </div>
-                            <div class="col-md-6 order-md-1">
-                                <div class="image-wrapper"
-                                    style="height: 300px; border: 1px solid rgba(64, 224, 208, 0.3);">
-                                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12714217816744233020"
-                                        alt="Bienestar en la ciudad">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- ARTÍCULO 1: ENFOQUE TEXTUAL ABIERTO (IMAGEN IZQUIERDA, TEXTO DERECHA) -->
+        <div class="row align-items-center mb-5 py-4 sequential-section">
+            <div class="col-md-5">
+                <div class="editorial-img-frame">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5549013778544321307" alt="Bosque y datos">
                 </div>
             </div>
-
+            <div class="col-md-7 pl-md-5">
+                <div class="blog-meta text-mint small mb-2">WISSENSCHAFT // 19. JUNI 2026</div>
+                <h2 class="editorial-title" style="color: #2dd4bf; font-family: 'Cinzel', serif;">
+                    Das geheime Netzwerk der Wiener Bäume
+                </h2>
+                <p class="text-light mt-3" style="line-height: 1.8; opacity: 0.9;">
+                    Bajo el asfalto de Viena ruge una conversación silenciosa. Los árboles de la ciudad no son entes aislados; se conectan, intercambian nutrientes y se alertan del estrés hídrico a través de filamentos microscópicos de micelio. ¿Cómo cambia esto nuestra perspectiva sobre el urbanismo resiliente?
+                </p>
+                <a href="#" class="btn-editorial-link mt-3 d-inline-block">Weiterlesen &rarr;</a>
+            </div>
         </div>
-    </main>
 
+        <!-- ARTÍCULO 2: INVERTIDO (TEXTO IZQUIERDA, IMAGEN DERECHA) -->
+        <div class="row align-items-center mb-5 py-4 sequential-section">
+            <div class="col-md-7 pr-md-5 order-2 order-md-1">
+                <div class="blog-meta text-mint small mb-2">ECO-SIMULATION // 12. JUNI 2026</div>
+                <h2 class="editorial-title" style="color: #2dd4bf; font-family: 'Cinzel', serif;">
+                    Algorithmen statt Äxte
+                </h2>
+                <p class="text-light mt-3" style="line-height: 1.8; opacity: 0.9;">
+                    ¿Puede el código predecir los susurros del bosque? La integración de Python en nuestra Sandbox permite simular cómo el cambio climático afecta el crecimiento de las especies nativas. Diseñar el futuro verde ya no es una utopía analógica, sino un lienzo digital interactivo.
+                </p>
+                <a href="#" class="btn-editorial-link mt-3 d-inline-block">Weiterlesen &rarr;</a>
+            </div>
+            <div class="col-md-5 order-1 order-md-2">
+                <div class="editorial-img-frame">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12028604753549646399" alt="Tecnología verde">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
     <!-- FOOTER (Común) -->
     <footer class="footer ">
         <div class="container text-center">

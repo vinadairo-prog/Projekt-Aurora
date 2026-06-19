@@ -181,7 +181,7 @@
             text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
         }
 
-     
+
         .main-content {
             flex-grow: 1;
             padding: 60px 0;
@@ -278,9 +278,31 @@
             opacity: 0.6;
             margin-top: 10px;
         }
+
+        /* Este es el balance perfecto: Oscuro para leer, transparente para ver la foto */
+        .glass-card {
+            background: rgba(20, 25, 35, 0.65) !important;
+            /* Azul/Gris oscuro */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(229, 228, 226, 0.2);
+            border-radius: 15px;
+            transition: 0.4s;
+            padding: 20px;
+            text-align: center;
+            color: #e5e4e2;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: rgba(30, 40, 60, 0.8) !important;
+            /* Se aclara un poco al tocarlo */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <!-- cambio -->
+
 <body>
 
     <!--  BARRA DE NAVEGACIÓN (Común) -->
@@ -381,71 +403,46 @@
                  Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <div class="container mb-5">
-                        <div class="row text-center">
-                            <div class="col-md-3 mb-4">
-                                <a href="#asphalt" class="aurora-link">
-                                    <h5>Raus aus dem Asphalt</h5>
-                                    <p class="small text-light">Urbanización resiliente</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#clima" class="aurora-link">
-                                    <h5>Microclima</h5>
-                                    <p class="small text-light">Adiós a las islas de calor</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#projekte" class="aurora-link">
-                                    <h5>Wiener Projekte</h5>
-                                    <p class="small text-light">Neubaugasse & Cool Streets</p>
-                                </a>
-                            </div>
-                            <div class="col-md-3 mb-4">
-                                <a href="#salud" class="aurora-link">
-                                    <h5>Salud Urbana</h5>
-                                    <p class="small text-light">Bienestar y Biofilia</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div id="asphalt" class="row align-items-center mb-5 py-4"
-                            style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <div class="col-md-6">
-                                <h2 class="hero-title" style="font-size: 2.5rem;">Raus aus dem <span>Asphalt</span></h2>
-                                <p>Viena está transformando sus calles. Donde antes había hormigón gris, ahora brota el
-                                    suelo vivo. Con una inversión masiva en la "despavimentación", la ciudad busca
-                                    absorber el agua de lluvia y dar espacio a las raíces de 4,500 nuevos árboles
-                                    anuales.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="image-wrapper"
-                                    style="height: 300px; border: 1px solid rgba(64, 224, 208, 0.3);">
-                                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16304030609288169574"
-                                        alt="Neubaugasse Greening">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="salud" class="row align-items-center mb-5 py-4">
-                            <div class="col-md-6 order-md-2">
-                                <h2 class="hero-title" style="font-size: 2.5rem;">Salud <span>Urbana</span></h2>
-                                <p>No es solo estética; es supervivencia. Los árboles reducen el estrés térmico en hasta
-                                    12 grados en las aceras, previniendo problemas cardiovasculares relacionados con el
-                                    calor. El "Proyecto Aurora" explora cómo el verde urbano devuelve la calma a la
-                                    psique metropolitana.</p>
-                            </div>
-                            <div class="col-md-6 order-md-1">
-                                <div class="image-wrapper"
-                                    style="height: 300px; border: 1px solid rgba(64, 224, 208, 0.3);">
-                                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12714217816744233020"
-                                        alt="Bienestar en la ciudad">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="container my-5">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="#clima" style="text-decoration: none;">
+                <div class="glass-card">
+                    <i class="fas fa-thermometer-quarter fa-2x mb-3" style="color: #40e0d0;"></i>
+                    <h5>Microclima</h5>
+                    <p class="small">El aire acondicionado natural de Viena.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#asphalt" style="text-decoration: none;">
+                <div class="glass-card">
+                    <i class="fas fa-hammer fa-2x mb-3" style="color: #40e0d0;"></i>
+                    <h5>Asphalt-Krieg</h5>
+                    <p class="small">Recuperando el suelo para la vida.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#projekte" style="text-decoration: none;">
+                <div class="glass-card">
+                    <i class="fas fa-map-marked-alt fa-2x mb-3" style="color: #40e0d0;"></i>
+                    <h5>Cool Streets</h5>
+                    <p class="small">Zieglergasse y Neubaugasse.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#biofilia" style="text-decoration: none;">
+                <div class="glass-card">
+                    <i class="fas fa-heartbeat fa-2x mb-3" style="color: #40e0d0;"></i>
+                    <h5>Biofilia</h5>
+                    <p class="small">Salud mental bajo la sombra.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
 
