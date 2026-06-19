@@ -1,134 +1,167 @@
 <!DOCTYPE html>
 <html lang="de">
-<!-- comentario que no se que quería decir: cambio otra vez para Proyecto Web-->
+
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projekt Aurora</title>
+  <title>Projekt Aurora</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  
-    <link rel="stylesheet" href="wald.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@300;400;500&display=swap"
+    rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="wald.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 
 <!-- Regla de Flexbox aprendida en CSS dinner -->
-<body> <div class="content-wrapper"> 
-<!-- Aus 3Schools -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+
+<body>
+  <!-- Aus 3Schools -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
 
     <!-- Brand/logo -->
     <a class="navbar-brand" href="#" style="font-family: 'Cinzel', serif;">AURORA</a>
-     <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" >
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav w-100 text-center "> <!-- ml-auto? -->
 
-  <div class="collapse navbar-collapse" id="mainNav"> <!-- Cambiar nombre mainNav  ?-->
-    <ul class="navbar-nav w-100 text-center">
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Info Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Waldkrankheiten</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Wald und Klima</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Energie und Ressourcen</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Nachhaltige Holzwirtschaft</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Eco-Simulation</a>
-      </li>      
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Dein Verlauf und Ergebnisse</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Wald und Gesundheit</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"target="_blank" rel="noopener">Kunst und Wälder</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <!-- Dropdown : Info -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Infos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="infoDropdown">
+            <a class="dropdown-item" href="./blog.html" target="_blank" rel="noopener">Info Blog</a>
+            <a class="dropdown-item" href="./deepwoods.html" target="_blank" rel="noopener">Deep Woods</a>
+            <a class="dropdown-item" href="./stadtbaum.html" target="_blank" rel="noopener">Bäume in der Stadt</a>
+          </div>
+        </li>
+        <!-- Dropdown: Ciencia -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Wissenschaft
+          </a>
+          <div class="dropdown-menu" aria-labelledby="scienceDropdown">
+            <a class="dropdown-item" href="./gesundheit.html" target="_blank" rel="noopener">Wald und Gesundheit</a>
+            <a class="dropdown-item" href="./krankheiten.html" target="_blank" rel="noopener">Waldkrankheiten</a>
+            <a class="dropdown-item" href="./klima.html" target="_blank" rel="noopener">Wald und Klima</a>
+          </div>
+        </li>
 
-    <div class="container-fluid mt-5">
+        <!-- Dropdown 2: Economía -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="economyDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Wirtschaft
+          </a>
+          <div class="dropdown-menu" aria-labelledby="economyDropdown">
+            <a class="dropdown-item" href="./ressourcen.html" target="_blank" rel="noopener">Energie und Ressourcen</a>
+            <a class="dropdown-item" href="./holzwirtschaft.html" target="_blank" rel="noopener">Holzwirtschaft</a>
+          </div>
+        </li>
 
-        <!-- 1. Zeile Beginn-->
-        <!-- <div class="row">
+        <!-- Dropdown: Simulation -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Eco-Simulation
+          </a>
+          <div class="dropdown-menu" aria-labelledby="scienceDropdown">
+            <a class="dropdown-item" href="./sandbox.html" target="_blank" rel="noopener">Sandbox</a>
+            <a class="dropdown-item" href="./herausforderungen.html" target="_blank"
+              rel="noopener">Herausforderungen</a>
+            <a class="dropdown-item" href="./ergebnisse.html" target="_blank" rel="noopener">Ergegnisse</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./verlauf.html" target="_blank" rel="noopener">Verlauf und Ergebnisse</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-5">
+
+    <!-- 1. Zeile Beginn-->
+    <!-- <div class="row">
             <div class="col-md-12"> -->
-                <div class="jumbotron"> 
-                    <!-- encabezado de pantalla llamativo según reglas de bootstrap -->
-                    <h1 class="display-4">PROJEKT AURORA</h1> 
-                    <br>
-                    <h4>Zurück zu den Wurzeln – Der Wald als Ursprung und Zukunft unserer Lebensräume.</h4>  
-                    <br>
-                    <p>Eine digitale Brücke zwischen Mensch, Technologie und Natur.</p>
-                </div>
-            <!-- </div>
+    <div class="jumbotron">
+      <!-- encabezado de pantalla llamativo según reglas de bootstrap -->
+      <h1 class="display-4">PROJEKT AURORA</h1>
+      <br>
+      <h4>Zurück zu den Wurzeln – Der Wald als Ursprung und Zukunft unserer Lebensräume.</h4>
+      <br>
+      <p>Eine digitale Brücke zwischen Mensch, Technologie und Natur.</p>
+    </div>
+    <!-- </div>
         </div> -->
-        <!-- 1. Zeile Ende-->
-        
-        
-        <!-- 2. Zeile Beginn-->
-        <!-- <div class="container-fluid mt-3"> --> <!-- este div tal vez no sea necesario de momento no afeta porque no tengo nada y si lo quito puedo quitar los otros menos el row -->
-           <div class="container mt-5"> <div class="row text-center"> 
-            <div class="col-md-6 mb-4">
-            <a href="#" class="aurora-link">
-                <h2 class="display-5">Deep Woods</h2>
-                <p class="text-light">Erforsche das Herz des Waldes</p>
-            </a>
+    <!-- 1. Zeile Ende-->
+
+
+    <!-- 2. Zeile Beginn-->
+    <!-- <div class="container-fluid mt-3"> -->
+    <!-- este div tal vez no sea necesario de momento no afeta porque no tengo nada y si lo quito puedo quitar los otros menos el row -->
+    <div class="container mt-5 ">
+      <div class="row text-center">
+        <div class="col-md-6 mb-4">
+          <a href="#" class="aurora-link">
+            <h2 class="display-5">Deep Woods</h2>
+            <p class="text-light">Erforsche das Herz des Waldes</p>
+          </a>
         </div>
 
         <div class="col-md-6 mb-4">
-            <a href="#" class="aurora-link">
-                <h2 class="display-5">Bäume in der Stadt</h2>
-                <p class="text-light">Natur auf dem Asphalt</p>
-            </a>
+          <a href="#" class="aurora-link">
+            <h2 class="display-5">Bäume in der Stadt</h2>
+            <p class="text-light">Natur auf dem Asphalt</p>
+          </a>
         </div>
 
-    </div>
-</div>
-               
-               
-        <!-- 2. Zeile Ende-->
-        <!-- 3. Zeile Beginn-->
-  
-           
- 
-</div>
+      </div>
     </div>
 
-<footer class="footer mt-auto">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
-            
-            <div class="row w-100">
-                <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Über mich</a></div>
-                <!-- <div class="col-md-4"><a class="footer-link" href="https://adobe.com" target="_blank" rel="noopener">Referenz</a></div> --> <!-- referenz für Text Logo -->
-                <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Impressum</a></div>
-                <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Datenschutz</a></div>
-            </div>
 
-            <p class="copyright">&copy; 2026 Adair Araujo Valenzuela</p>
+    <!-- 2. Zeile Ende-->
+    <!-- 3. Zeile Beginn-->
+
+
+
+  </div>
+
+
+  <footer class="footer ">
+    <div class="container text-center">
+      <div class="footer-content">
+        <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
+
+        <div class="row w-100">
+          <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Über mich</a></div>
+          <!-- <div class="col-md-4"><a class="footer-link" href="https://adobe.com" target="_blank" rel="noopener">Referenz</a></div> -->
+          <!-- referenz für Text Logo -->
+          <div class="col-md-4"><a class="footer-link" href="./impressum.html" target="_blank" rel="noopener">Impressum</a></div>
+          <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Datenschutz</a></div>
         </div>
+
+        <p class="copyright">&copy; 2026 Adair Araujo Valenzuela</p>
+      </div>
     </div>
-</footer>
+  </footer>
 </body>
 
 </html>
