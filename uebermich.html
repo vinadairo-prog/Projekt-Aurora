@@ -536,15 +536,14 @@
 
     <!-- HERO / JUMBOTRON SECTION (Común pero dinámico)
          Cambiando el style inline de background-image puedes usar fotos distintas por página.-->
-    <header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
-        <section class="ueber-mich-hero">
-            <div class="container">
+<header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
+        <section class="ueber-mich-hero py-5">
+            <div class="container-fluid px-4 px-md-5">
                 <div class="row align-items-center">
                     <!-- Columna del Texto (Izquierda) -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 pe-lg-5 mb-4 mb-lg-0">
                         <span class="sub-title">Über Mich</span>
-                        <h1 class="main-title">Wer ich bin & <br><span class="highlight-text">was mich bewegt</span>
-                        </h1>
+                        <h1 class="main-title">Wer ich bin & <br><span class="highlight-text">was mich bewegt</span></h1>
                         <div class="decor-line"></div>
 
                         <p class="lead-text">
@@ -560,9 +559,8 @@
                     <!-- Columna de la Imagen (Derecha) -->
                     <div class="col-lg-5 text-center">
                         <div class="profile-image-wrapper">
-                            <!-- Aquí vinculamos tu retrato preferido, por ejemplo "Porträt eines entspannten Mannes.png" -->
                             <img src="./Images-Projekt-Aurora/Porträt eines entspannten Mannes.png" alt="Adair"
-                                class="profile-img">
+                                class="profile-img img-fluid">
                         </div>
                     </div>
                 </div>
@@ -572,14 +570,14 @@
 
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
     <main class="main-content">
-        <div class="container">
+        <div class="container-fluid">
 
             <!-- Aquí irá el contenido específico de cada una de las 16 páginas.
                  Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
             <div class="row">
                 <div class="col-md-12 text-center">
 
-                    <div class="container">
+                    
                         <div class="row text-center mt-5">
                             <div class="col-md-12 mb-5">
                                 <h2 class="hero-title highlight-text"
@@ -596,17 +594,18 @@
                             <div class="col-md-4 mb-4">
                                 <div class="about-skill-card text-center">
                                     <i class="fas fa-rocket fa-3x icon-accent"></i>
-                                    <h3>Unternehmerischer <br> Geist</h3>
+                                    <h3>Projekte <br> Geist</h3>
                                     <div class="decor-line mx-auto"
                                         style="width: 50px; height: 1px; background: rgba(229, 228, 226, 0.1);"></div>
-                                    <p>Die treibende Kraft, Visionen in greifbaren Fortschritt zu verwandeln.</p>
+                                    <p>DNutzung modernster Technologien und fundierter Datenanalysen zur
+                                        Entscheidungsfindung.</p>
                                 </div>
                             </div>
 
                             <div class="col-md-4 mb-4">
                                 <div class="about-skill-card text-center">
                                     <i class="fas fa-eye fa-3x icon-accent"></i>
-                                    <h3>Strategische <br> Vision</h3>
+                                    <h3>Kunkst und Literatur <br> Vision</h3>
                                     <div class="decor-line mx-auto"
                                         style="width: 50px; height: 1px; background: rgba(229, 228, 226, 0.1);"></div>
                                     <p>Klare Zielsetzung und strategisches Denken für langfristigen Erfolg.</p>
@@ -616,7 +615,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="about-skill-card text-center">
                                     <i class="fas fa-network-wired fa-3x icon-accent"></i>
-                                    <h3>Technologie <br> & Daten</h3>
+                                    <h3>Musik<br> & Daten</h3>
                                     <div class="decor-line mx-auto"
                                         style="width: 50px; height: 1px; background: rgba(229, 228, 226, 0.1);"></div>
                                     <p>Nutzung modernster Technologien und fundierter Datenanalysen zur
@@ -624,13 +623,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                 </div>
-            </div>
-
-
-
-        </div>
+            
     </main>
 
     <!-- FOOTER (Común) -->
@@ -656,15 +651,3 @@
 </body>
 
 </html>
-<!--  Pasos para crear tus archivos partiendo de este template:
-
-2. **Cómo duplicarlo para una subpágina nueva:**
-   * Haz una copia de `template.html` y cámbiale el nombre al de tu subpágina (ej: `krankheiten.html`).
-3. **Qué debes modificar en cada copia:**
-   * **El título en el `<head>` (línea 7):** Cambia `[Nombre de la Página]` por el título correcto (ej: `Waldkrankheiten`).
-   * **La imagen de fondo en el Jumbotron (línea 138):** Verás que el elemento `<header>` tiene un estilo inline: `style="background-image: url('./assets/images/default-bg.jpg');"`. Solo tienes que cambiar esa ruta por la imagen correspondiente a esa sección específica.
-   * **El texto del Jumbotron (líneas 141-142):** Reemplaza `[Título de la Subpágina]` y su descripción corta.
-   * **El Bloque de Contenido Principal (líneas 148 a 161):** Elimina el div de ejemplo y escribe o pega aquí el contenido específico (las grids, columnas, o información de esa sección).
-
-¡Todo lo demás (navbar, footer y los estilos base) se quedará intacto y perfectamente estilizado en cada página que dupliques! Dime si la estructura te convence y cuál es el siguiente paso que deseas realizar.
- -->

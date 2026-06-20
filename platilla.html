@@ -371,10 +371,30 @@
 
     <!-- HERO / JUMBOTRON SECTION (Común pero dinámico)
          Cambiando el style inline de background-image puedes usar fotos distintas por página.-->
+   
+<!-- HERO / JUMBOTRON SECTION (Común pero dinámico) -->
     <header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
-        
+        <div class="container hero-container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <!-- Título Principal con tipografía Cinzel y resplandor sutil -->
+                    <h1 class="hero-title">PROJEKT AURORA</h1>
+                    
+                    <!-- Subtítulo / Lema con opacidad plata del Urbanist -->
+                    <p class="hero-subtitle mt-3">
+                        Zurück zu den Wurzeln – Der Wald als Ursprung und Zukunft unserer Lebensräume.
+                    </p>
+                    
+                    <!-- Pequeño texto aclaratorio/puente opcional -->
+                    <p class="small text-muted font-weight-light mt-2" style="letter-spacing: 1px;">
+                        Eine digitale Brücke zwischen Natur, Mensch und Technologie.
+                    </p>
+                </div>
+            </div>
+        </div>
     </header>
-
+        
+ 
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
     <main class="main-content">
         <div class="container">
@@ -409,15 +429,3 @@
 </body>
 
 </html>
-<!--  Pasos para crear tus archivos partiendo de este template:
-
-2. **Cómo duplicarlo para una subpágina nueva:**
-   * Haz una copia de `template.html` y cámbiale el nombre al de tu subpágina (ej: `krankheiten.html`).
-3. **Qué debes modificar en cada copia:**
-   * **El título en el `<head>` (línea 7):** Cambia `[Nombre de la Página]` por el título correcto (ej: `Waldkrankheiten`).
-   * **La imagen de fondo en el Jumbotron (línea 138):** Verás que el elemento `<header>` tiene un estilo inline: `style="background-image: url('./assets/images/default-bg.jpg');"`. Solo tienes que cambiar esa ruta por la imagen correspondiente a esa sección específica.
-   * **El texto del Jumbotron (líneas 141-142):** Reemplaza `[Título de la Subpágina]` y su descripción corta.
-   * **El Bloque de Contenido Principal (líneas 148 a 161):** Elimina el div de ejemplo y escribe o pega aquí el contenido específico (las grids, columnas, o información de esa sección).
-
-¡Todo lo demás (navbar, footer y los estilos base) se quedará intacto y perfectamente estilizado en cada página que dupliques! Dime si la estructura te convence y cuál es el siguiente paso que deseas realizar.
- -->
