@@ -54,7 +54,7 @@
         .main-content {
             flex-grow: 1;
             padding: 60px 0;
-            
+
             /* Fondo muy transparente pero con luz */
             background: rgba(255, 255, 255, 0, 803) !important;
             /* El secreto: desenfoque fuerte para que parezca neblina */
@@ -148,7 +148,7 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                     rgba(182, 255, 194, 0.4) 40%,
                     rgba(159, 245, 193, 0.7) 85%) !important ; */
             /* color: #e5e4e2; */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
         }
 
         .jumbotron-hero::before {
@@ -159,14 +159,11 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
             width: 100%;
             height: 100%;
             /* Bajamos la opacidad a 0.3 para que la foto sea la protagonista */
-            background-color: rgba(241, 248, 244, 0);
+            background-color: rgba(241, 248, 244, 0.1);
             z-index: 1;
         }
 
-        .hero-title {
-            /* ... (mantenemos lo anterior pero con este resplandor) */
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.8);
-        }
+
 
         .hero-container {
             position: relative;
@@ -180,7 +177,16 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
             font-weight: 500;
             font-size: 3rem;
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
+            /* text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important; */
+            text-shadow:
+                /* 1. Tu resplandor original (conserva ese brillo místico que te gustaba) */
+                0 0 20px rgba(255, 255, 255, 0.836),
+                /* 2. Tu golpe de sombra oscura original */
+                2px 2px 5px rgba(0, 0, 0, 0.89),
+                /* 3. CAPA EXTRA: Una sombra negra gigante y muy difuminada para despegar la letra del bosque */
+                0 0 35px rgba(0, 0, 0, 0.95),
+                0 0 15px rgba(0, 0, 0, 0.90) !important;
+
         }
 
         /* SECCIÓN DE CONTENIDO PRINCIPAL */
@@ -232,21 +238,53 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
         }
 
         .hero-subtitle {
-            color: rgba(229, 228, 226, 0.85) !important;
+            color: white !important;
             /* Plata con 85% de opacidad */
-            font-size: 1.25rem;
-            font-weight: 300;
+            font-size: 1.6rem;
+            font-weight: 400;
             letter-spacing: 1px;
+            /*  text-shadow: 0 0 20px rgba(248, 247, 246, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.89) !important; */
+            text-shadow:
+                /* 1. Tu resplandor original (conserva ese brillo místico que te gustaba) */
+                0 0 20px rgba(248, 247, 246, 0.6),
+                /* 2. Tu golpe de sombra oscura original */
+                2px 2px 5px rgba(0, 0, 0, 0.89),
+                /* 3. CAPA EXTRA: Una sombra negra gigante y muy difuminada para despegar la letra del bosque */
+                0 0 35px rgba(0, 0, 0, 0.95),
+                0 0 15px rgba(0, 0, 0, 0.90) !important;
+        }
+
+        p.small {
+            color: whitesmoke;
+            text-shadow: 
+    /* 1. Mantenemos tu RESPLANDOR (Glow) místico original cerca de los bordes */
+    0 0 20px rgba(248, 247, 246, 0.7), 
+    
+    /* 2. Golpe oscuro directo y nítido para definición inicial */
+    4px 4px 6px rgba(0, 0, 0, 0.95),
+    
+    /* 3. CAPA EXTRA GIGANTE: Un cojín negro masivo y muy difuminado que oscurece el fondo */
+    0 0 60px rgba(0, 0, 0, 1),
+    
+    /* 4. Sombra de dispersión media para suavizar la transición */
+    0 0 25px rgba(0, 0, 0, 0.90) !important;
+            font-size: medium;
+            font-weight: 600;
+
         }
 
         /* FOOTER */
-         .editorial-img-frame {
+        .editorial-img-frame {
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             border: 2px solid #fff;
         }
-        .editorial-img-frame img { width: 100%; display: block; }
+
+        .editorial-img-frame img {
+            width: 100%;
+            display: block;
+        }
 
         footer {
 
@@ -398,7 +436,7 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                     </p>
 
                     <!-- Pequeño texto aclaratorio/puente opcional -->
-                    <p class="small text-muted font-weight-light mt-2" style="letter-spacing: 1px;">
+                    <p class="small font-weight-light mt-2" style="letter-spacing: 1px;">
                         Eine digitale Brücke zwischen Natur, Mensch und Technologie.
                     </p>
                 </div>
@@ -409,16 +447,24 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
     <main class="main-content">
         <div class="container">
-            
+
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="editorial-manifesto-box">
                         <h2 class="manifesto-title text-center mb-4">Einfluss der Wälder auf das Klima</h2>
                         <p style="text-align: justify; line-height: 1.8;">
-                            Bienvenido a la bitácora conceptual de Aurora. Este espacio no es solo un registro de datos, sino un lienzo donde la ciencia forestal y el desarrollo tecnológico se encuentran con la sensibilidad artística. Aquí exploramos el latido verde de nuestro entorno: desde los complejos ecosistemas de los bosques profundos hasta la resiliencia de los árboles que luchan por reclamar el asfalto en las grandes metrópolis como Viena.
+                            Bienvenido a la bitácora conceptual de Aurora. Este espacio no es solo un registro de datos,
+                            sino un lienzo donde la ciencia forestal y el desarrollo tecnológico se encuentran con la
+                            sensibilidad artística. Aquí exploramos el latido verde de nuestro entorno: desde los
+                            complejos ecosistemas de los bosques profundos hasta la resiliencia de los árboles que
+                            luchan por reclamar el asfalto en las grandes metrópolis como Viena.
                         </p>
                         <p style="text-align: justify; line-height: 1.8;">
-                            A través de la investigación científica, el análisis económico de los recursos y la creación de simulaciones digitales interactivas, buscamos descifrar los patrones ocultos de la naturaleza. Este magacín es el puente divulgativo del proyecto, un lugar para detenerse y reflexionar sobre cómo los algoritmos pueden ayudarnos a comprender y rediseñar nuestro futuro colectivo.
+                            A través de la investigación científica, el análisis económico de los recursos y la creación
+                            de simulaciones digitales interactivas, buscamos descifrar los patrones ocultos de la
+                            naturaleza. Este magacín es el puente divulgativo del proyecto, un lugar para detenerse y
+                            reflexionar sobre cómo los algoritmos pueden ayudarnos a comprender y rediseñar nuestro
+                            futuro colectivo.
                         </p>
                     </div>
                 </div>
@@ -433,7 +479,9 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                 <div class="col-md-7 pl-md-5">
                     <div class="blog-meta small mb-2">WISSENSCHAFT // 19. JUNI 2026</div>
                     <h3 class="editorial-title">Das geheime Netzwerk der Wiener Bäume</h3>
-                    <p style="color:#d8f0ef; line-height: 1.7;">Bajo el asfalto de Viena ruge una conversación silenciosa. Los árboles no son entes aislados; se conectan a través de filamentos de micelio...</p>
+                    <p style="color:#d8f0ef; line-height: 1.7;">Bajo el asfalto de Viena ruge una conversación
+                        silenciosa. Los árboles no son entes aislados; se conectan a través de filamentos de micelio...
+                    </p>
                     <a href="#" class="btn-editorial-link" style="color: whitesmoke;">Weiterlesen &rarr;</a>
                 </div>
             </div>
@@ -442,7 +490,8 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                 <div class="col-md-7 pr-md-5 order-2 order-md-1">
                     <div class="blog-meta small mb-2">ECO-SIMULATION // 12. JUNI 2026</div>
                     <h3 class="editorial-title">Algorithmen statt Äxte</h3>
-                    <p style="color:#bfdbdb; line-height: 1.7;">¿Puede el código predecir los susurros del bosque? La integración de Python permite simular el futuro verde como un lienzo digital interactivo...</p>
+                    <p style="color:#bfdbdb; line-height: 1.7;">¿Puede el código predecir los susurros del bosque? La
+                        integración de Python permite simular el futuro verde como un lienzo digital interactivo...</p>
                     <a href="#" class="btn-editorial-link" style="color:whitesmoke">Weiterlesen &rarr;</a>
                 </div>
                 <div class="col-md-5 order-1 order-md-2">
