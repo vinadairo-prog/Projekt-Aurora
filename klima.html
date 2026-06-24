@@ -171,6 +171,8 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
             text-align: center;
         }
 
+        
+
         .hero-title {
             font-family: 'Cinzel', serif;
             letter-spacing: 6px;
@@ -186,6 +188,7 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                 /* 3. CAPA EXTRA: Una sombra negra gigante y muy difuminada para despegar la letra del bosque */
                 0 0 35px rgba(0, 0, 0, 0.95),
                 0 0 15px rgba(0, 0, 0, 0.90) !important;
+                z-index: 3;
 
         }
 
@@ -244,32 +247,44 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
             font-weight: 400;
             letter-spacing: 1px;
             /*  text-shadow: 0 0 20px rgba(248, 247, 246, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.89) !important; */
-            text-shadow:
-                /* 1. Tu resplandor original (conserva ese brillo místico que te gustaba) */
-                0 0 20px rgba(248, 247, 246, 0.6),
-                /* 2. Tu golpe de sombra oscura original */
-                2px 2px 5px rgba(0, 0, 0, 0.89),
-                /* 3. CAPA EXTRA: Una sombra negra gigante y muy difuminada para despegar la letra del bosque */
-                0 0 35px rgba(0, 0, 0, 0.95),
-                0 0 15px rgba(0, 0, 0, 0.90) !important;
+            text-shadow: 
+    /* 1. Definimos tu resplandor (Glow) místico original, pero muy nítido */
+    0 0 15px rgba(248, 247, 246, 0.7), 
+    
+    /* 2. Golpe de sombra inicial corto y opaco para profundidad inmediata */
+    2px 2px 4px rgba(0, 0, 0, 0.95),
+
+    /* 3. CAPA DE POTENCIA MASIVA 1: Radio corto (sin desenfoque grande), opacidad máxima para densidad */
+    0 0 20px rgba(0, 0, 0, 0.98),
+    
+    /* 4. CAPA DE POTENCIA MASIVA 2: Acumulación de oscuridad opaca */
+    0 0 25px rgba(0, 0, 0, 0.98),
+    
+    /* 5. CAPA DE EXPANSIÓN DURA: El radio más "grande", pero aún bajo para que no se suavice, muy opaco */
+    0 0 60px rgba(0, 0, 0, 1) !important;
+            z-index: 3;
         }
 
         p.small {
-            color: whitesmoke;
+            color: rgb(168, 252, 168);
             text-shadow: 
-    /* 1. Mantenemos tu RESPLANDOR (Glow) místico original cerca de los bordes */
-    0 0 20px rgba(248, 247, 246, 0.7), 
+    /* 1. Definimos tu resplandor (Glow) místico original, pero muy nítido */
+    0 0 15px rgba(248, 247, 246, 0.7), 
     
-    /* 2. Golpe oscuro directo y nítido para definición inicial */
-    4px 4px 6px rgba(0, 0, 0, 0.95),
+    /* 2. Golpe de sombra inicial corto y opaco para profundidad inmediata */
+    2px 2px 4px rgba(0, 0, 0, 0.95),
+
+    /* 3. CAPA DE POTENCIA MASIVA 1: Radio corto (sin desenfoque grande), opacidad máxima para densidad */
+    0 0 20px rgba(0, 0, 0, 0.98),
     
-    /* 3. CAPA EXTRA GIGANTE: Un cojín negro masivo y muy difuminado que oscurece el fondo */
-    0 0 60px rgba(0, 0, 0, 1),
+    /* 4. CAPA DE POTENCIA MASIVA 2: Acumulación de oscuridad opaca */
+    0 0 25px rgba(0, 0, 0, 0.98),
     
-    /* 4. Sombra de dispersión media para suavizar la transición */
-    0 0 25px rgba(0, 0, 0, 0.90) !important;
+    /* 5. CAPA DE EXPANSIÓN DURA: El radio más "grande", pero aún bajo para que no se suavice, muy opaco */
+    0 0 60px rgba(0, 0, 0, 1) !important;
             font-size: medium;
-            font-weight: 600;
+            font-weight: 500;
+            z-index: 3;
 
         }
 
@@ -436,7 +451,7 @@ background: linear-gradient(90deg, rgba(52, 209, 76, 0.82) 0%, rgba(87, 199, 133
                     </p>
 
                     <!-- Pequeño texto aclaratorio/puente opcional -->
-                    <p class="small font-weight-light mt-2" style="letter-spacing: 1px;">
+                    <p class="small mt-2" style="letter-spacing: 1px;">
                         Eine digitale Brücke zwischen Natur, Mensch und Technologie.
                     </p>
                 </div>
