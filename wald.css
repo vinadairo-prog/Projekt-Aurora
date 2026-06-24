@@ -247,7 +247,7 @@ main div,
  
     div.jumbotron h1.display-4 {
  
-      font-size: 4rem !important; 
+      font-size: 3rem !important; 
 
     }
 
@@ -266,21 +266,21 @@ footer {
        0.4 -> Transición verde (más cristalina)
        0.6 -> Bordes oscuros (deja pasar más la imagen de fondo)
     */
-/*     background: radial-gradient(circle at center,
+    background: radial-gradient(circle at center,
             rgba(255, 255, 255, 0.2) 0%,
             rgba(10, 35, 28, 0.3) 25%,
          
             rgba(5, 15, 10, 0.5) 100%
             
-        ) !important; */
-
-    background: radial-gradient(circle at center,
-            rgba(255, 255, 255, 0.2) 0%,
-            /* Subimos los valores RGB para encender el azul-violeta y darle más brillo */
-            rgba(45, 38, 75, 0.3) 25%,
-            /* Aclaramos el tono de cierre para que la atmósfera general sea menos sombría */
-            rgba(24, 20, 42, 0.5) 100%
         ) !important;
+
+/*     background: radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.2) 0%,
+            
+            rgba(45, 38, 75, 0.3) 25%,
+           
+            rgba(24, 20, 42, 0.5) 100%
+        ) !important; */
 
     border: none;
     color: white;
