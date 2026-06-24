@@ -243,11 +243,11 @@ main div,
 }
 
 
-/*   @media (max-width: 576px) { 
+  @media (max-width: 576px) { 
  
     div.jumbotron h1.display-4 {
  
-      font-size: 2.5rem !important; 
+      font-size: 5rem !important; 
 
     }
 
@@ -255,7 +255,7 @@ main div,
         font-size: 1rem !important;
     }
   }
- */
+
 
 .jumbotron,
 footer {
