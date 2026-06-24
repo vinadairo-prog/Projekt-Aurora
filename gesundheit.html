@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora - Título </title>
+
+    <!-- Bootstrap 4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Urbanist:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            /* Esto hace que esta sección "crezca" y empuje el footer abajo */
+            padding: 60px 0;
+            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #0f172a;
+            /* Fondo oscuro forestal o #f8fafc */
+            color: #e5e4e2;
+            background-image: url(./Images-Projekt-Aurora/Deep_Woods1.jpg);
+            background-repeat: no-repeat;
+            /* Evita que se cuadruplique */
+            background-size: cover;
+            /* Estira la imagen para que cubra TODO el ancho y alto */
+            background-position: center;
+            /* Centra la imagen para que no se corte feo */
+            background-attachment: fixed;
+            /* Hace que la imagen se quede quieta mientras haces scroll (estilo index) */
+            font-family: 'Urbanist', sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        .main-content {
+            flex-grow: 1;
+            padding: 60px 0;
+            /* Fondo muy transparente pero con luz */
+            background: rgba(255, 255, 255, 0.05) !important;
+            /* El secreto: desenfoque fuerte para que parezca neblina */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            /* Borde plata sutil para dar forma */
+            border-top: 1px solid rgba(229, 228, 226, 0.1);
+        }
+
+        /* NAVBAR: Sincronizada con el cielo del index */
+        .navbar {
+            width: 100%;
+            background-color: rgba(15, 25, 45, 0.7) !important;
+            backdrop-filter: blur(10px);
+            /* Efecto cristal */
+            border-bottom: 1px solid rgba(229, 228, 226, 0.2);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* Esto obligará a la lista interna del menú a repartirse uniformemente */
+        .navbar-nav {
+            display: flex !important;
+            justify-content: space-around !important;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #e5e4e2 !important;
+            /* Plata base */
+            transition: 0.4s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 12px rgba(229, 228, 226, 0.6) !important;
+            transform: scale(1.05);
+        }
+
+        /* Icono menú móvil (Las 3 rayitas brillantes) */
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
+        }
+
+        .navbar-brand {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: #40e0d0 !important;
+            /* Turquesa Aurora o bien color: #e5e4e2 !important; */
+            letter-spacing: 2px;
+        }
+
+
+        .dropdown-menu {
+            background-color: rgba(20, 30, 55, 0.85);
+            /* Azul noche */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 228, 226, 0.2);
+        }
+
+        .dropdown-item {
+            color: #e5e4e2 !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(64, 224, 208, 0.2);
+            /* Aguamarina muy suave */
+            color: #fff !important;
+        }
+
+        /* JUMBOTRON BASE (El fondo dinámico se define en el HTML con style inline) */
+        .jumbotron-hero {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 100px 0;
+            margin-bottom: 0;
+            border-radius: 0;
+            background: radial-gradient(circle at center,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(10, 35, 28, 0.4) 40%,
+                    rgba(5, 15, 10, 0.7) 100%) !important;
+            /* color: #e5e4e2; */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .jumbotron-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Bajamos la opacidad a 0.3 para que la foto sea la protagonista */
+            background-color: rgba(15, 23, 42, 0.35);
+            z-index: 1;
+        }
+
+        .hero-title {
+            /* ... (mantenemos lo anterior pero con este resplandor) */
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 6px;
+            font-weight: 500;
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
+        }
+
+        /* SECCIÓN DE CONTENIDO PRINCIPAL */
+        /* .main-content {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
+        } */
+
+     
+        .main-content {
+            flex-grow: 1;
+            padding: 60px 0;
+
+            /* CAMBIO CLAVE: Usamos un azul noche muy transparente (60%) */
+            /* En lugar de blanco, usamos (15, 23, 42) */
+            background: rgba(15, 23, 42, 0.6) !important;
+
+            /* El blur debe ser potente para que se sienta el "Milchige Effekt" */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            /* Un borde superior para separar el Hero del contenido */
+            border-top: 1px solid rgba(229, 228, 226, 0.15);
+
+            /* Un ligero sombreado interno para dar profundidad */
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-subtitle {
+            color: rgba(229, 228, 226, 0.85) !important;
+            /* Plata con 85% de opacidad */
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER */
+
+
+        footer {
+            background: rgba(5, 15, 10, 0.8) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            margin-top: auto;
+            /* Empuja el footer al final */
+        }
+
+        .footer-link {
+            color: #e5e4e2 !important;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #40e0d0 !important;
+            /* Brillo Aguamarina */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            /* Esto separa el logo de los links y los links del copyright */
+        }
+
+        .footer-content .row {
+            margin: 10px 0;
+            /* Espacio arriba y abajo de la fila de links */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* Centra las columnas si sobran espacios */
+        }
+
+        .footer-logo {
+            margin-top: 5px;
+            font-size: 1.6rem;
+            letter-spacing: 6px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--  BARRA DE NAVEGACIÓN (Común) -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">AURORA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-label="Toggle navigation">
+                <!-- veri si agrego <div class="content-wrapper">  -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav w-100 text-center "> <!-- ml-auto? -->
+
+                    <!-- Dropdown : Info -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Infos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <a class="dropdown-item" href="./blog.html"  rel="noopener">Info Blog</a>
+                            <a class="dropdown-item" href="./deepwoods.html"  rel="noopener">Deep
+                                Woods</a>
+                            <a class="dropdown-item" href="./stadtbaum.html"  rel="noopener">Bäume in der
+                                Stadt</a>
+                            <a class="dropdown-item" href="./waldundkunst.html"  rel="noopener">Wald und Kunst</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown: Ciencia -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Wissenschaft
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="scienceDropdown">
+                            <a class="dropdown-item" href="./gesundheit.html"  rel="noopener">Wald und
+                                Gesundheit</a>
+                            <a class="dropdown-item" href="./krankheiten.html"
+                                rel="noopener">Waldkrankheiten</a>
+                            <a class="dropdown-item" href="./klima.html"  rel="noopener">Wald und
+                                Klima</a>
+                        </div>
+                    </li>
+
+                    <!-- Dropdown  Economía -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="economyDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Wirtschaft
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="economyDropdown">
+                            <a class="dropdown-item" href="./ressourcen.html"  rel="noopener">Energie und
+                                Ressourcen</a>
+                            <a class="dropdown-item" href="./holzwirtschaft.html" 
+                                rel="noopener">Holzwirtschaft</a>
+                        </div>
+                    </li>
+
+                    <!-- Dropdown: Simulation -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Eco-Simulation
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="scienceDropdown">
+                            <a class="dropdown-item" href="./sandbox.html"  rel="noopener">Sandbox</a>
+                            <a class="dropdown-item" href="./herausforderungen.html" 
+                                rel="noopener">Herausforderungen</a>
+                            <a class="dropdown-item" href="./ergebnisse.html"
+                                rel="noopener">Ergegnisse</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./verlauf.html" target="_blank" rel="noopener">Verlauf und
+                            Ergebnisse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / JUMBOTRON SECTION (Común pero dinámico)
+         Cambiando el style inline de background-image puedes usar fotos distintas por página.-->
+   
+<!-- HERO / JUMBOTRON SECTION (Común pero dinámico) -->
+    <header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
+        <div class="container hero-container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <!-- Título Principal con tipografía Cinzel y resplandor sutil -->
+                    <h1 class="hero-title">Wald und Gesundheit</h1>
+                    
+                    <!-- Subtítulo / Lema con opacidad plata del Urbanist -->
+                    <p class="hero-subtitle mt-3">
+                        Zurück zu den Wurzeln – Der Wald als Ursprung und Zukunft unserer Lebensräume.
+                    </p>
+                    
+                    <!-- Pequeño texto aclaratorio/puente opcional -->
+                    <p class="small text-muted font-weight-light mt-2" style="letter-spacing: 1px;">
+                        Eine digitale Brücke zwischen Natur, Mensch und Technologie.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+   <!--      cambio -->
+    <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Aquí irá el contenido específico de cada una de las 16 páginas.
+                 Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
+            
+
+        </div>
+    </main>
+
+    <!-- FOOTER (Común) -->
+    <footer class="footer ">
+        <div class="container text-center">
+            <div class="footer-content">
+                <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
+
+                <div class="row w-100">
+                    <div class="col-md-4"><a class="footer-link" href="#"  rel="noopener">Über mich</a>
+                    </div>
+                    <div class="col-md-4"><a class="footer-link" href="./impressum.html" 
+                            rel="noopener">Impressum</a></div>
+                    <div class="col-md-4"><a class="footer-link" href="#"  rel="noopener">Datenschutz</a>
+                    </div>
+                </div>
+
+                <p class="copyright">&copy; 2026 Adair Araujo Valenzuela</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

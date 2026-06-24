@@ -356,22 +356,23 @@
         /* Marco de la Foto con Efecto de Brillo Sutil */
 
         .profile-image-wrapper {
-            width: 320px;
-            height: 425px;
-
-            border-radius: 45% / 55%;
+            width: 300px;
+            height: 420px;
+            
+            border-radius: 40% / 60%;
             padding: 0;
-
+           
+       /*      border: none; */
             background:
                 radial-gradient(ellipse,
                     rgba(0, 245, 212, 0.45) 0%,
-                    rgba(157, 78, 221, 0.35) 35%,
+                    rgba(157, 78, 221, 0.35) 5%,
                     rgba(157, 78, 221, 0.12) 55%,
-                    transparent 75%);
-
+                    transparent 70%);
+            /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) transparent 80%; */
             box-shadow:
-                0 0 35px rgba(0, 245, 212, 0.25),
-                0 0 90px rgba(157, 78, 221, 0.18);
+                0 0 35px rgba(0, 245, 212, 0.25) transparent 80%,
+                0 0 90px rgba(157, 78, 221, 0.18) transparent 80%;
 
             display: inline-flex;
             align-items: center;
@@ -381,25 +382,27 @@
 
 
         .profile-img {
-            width: 320px;
-            height: 410px;
-            object-fit: cover;
-
+            width: 310px;
+            height: 400px;
+            object-fit: contain;
+            
             /* border-radius: 50% / 40%; */
-
-            border: none;
+           
 
             mask-image:
-                radial-gradient(ellipse,
-                    black 45%,
-                    rgba(0, 0, 0, 0.7) 60%,
+                radial-gradient(ellipse 75% 85% at center,
+                    black 35%,
+                    rgba(0, 0, 0, 0.85) 50%,
+                     rgba(0,0,0,0.35) 70%,
                     transparent 85%);
 
             -webkit-mask-image:
-                radial-gradient(ellipse,
-                    black 45%,
-                    rgba(0, 0, 0, 0.7) 60%,
-                    transparent 85%);
+                radial-gradient(ellipse 55% 64% at center,
+                    black 35%,
+                    rgba(0, 0, 0, 0.85) 50%,
+                    rgba(0,0,0,0.35) 70%,
+                    transparent 80%);
+                    
         }
 
         /* --- NUEVOS ESTILOS PARA TARJETAS DE PRINCIPIOS --- */
@@ -460,7 +463,7 @@
             <a class="navbar-brand" href="./index.html">AURORA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
                 aria-controls="mainNav" aria-label="Toggle navigation">
-                <!-- veri si agrego <div class="content-wrapper">  -->
+               
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -474,11 +477,12 @@
                             Infos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="infoDropdown">
-                            <a class="dropdown-item" href="./blog.html" target="_blank" rel="noopener">Info Blog</a>
-                            <a class="dropdown-item" href="./deepwoods.html" target="_blank" rel="noopener">Deep
+                            <a class="dropdown-item" href="./blog.html"  rel="noopener">Info Blog</a>
+                            <a class="dropdown-item" href="./deepwoods.html"  rel="noopener">Deep
                                 Woods</a>
-                            <a class="dropdown-item" href="./stadtbaum.html" target="_blank" rel="noopener">Bäume in der
+                            <a class="dropdown-item" href="./stadtbaum.html"  rel="noopener">Bäume in der
                                 Stadt</a>
+                            <a class="dropdown-item" href="./waldundkunst.html" rel="noopener">Wald und Kunst</a>
                         </div>
                     </li>
                     <!-- Dropdown: Ciencia -->
@@ -488,11 +492,11 @@
                             Wissenschaft
                         </a>
                         <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./gesundheit.html" target="_blank" rel="noopener">Wald und
+                            <a class="dropdown-item" href="./gesundheit.html"  rel="noopener">Wald und
                                 Gesundheit</a>
-                            <a class="dropdown-item" href="./krankheiten.html" target="_blank"
+                            <a class="dropdown-item" href="./krankheiten.html" 
                                 rel="noopener">Waldkrankheiten</a>
-                            <a class="dropdown-item" href="./klima.html" target="_blank" rel="noopener">Wald und
+                            <a class="dropdown-item" href="./klima.html"  rel="noopener">Wald und
                                 Klima</a>
                         </div>
                     </li>
@@ -504,9 +508,9 @@
                             Wirtschaft
                         </a>
                         <div class="dropdown-menu" aria-labelledby="economyDropdown">
-                            <a class="dropdown-item" href="./ressourcen.html" target="_blank" rel="noopener">Energie und
+                            <a class="dropdown-item" href="./ressourcen.html"  rel="noopener">Energie und
                                 Ressourcen</a>
-                            <a class="dropdown-item" href="./holzwirtschaft.html" target="_blank"
+                            <a class="dropdown-item" href="./holzwirtschaft.html" 
                                 rel="noopener">Holzwirtschaft</a>
                         </div>
                     </li>
@@ -518,15 +522,15 @@
                             Eco-Simulation
                         </a>
                         <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./sandbox.html" target="_blank" rel="noopener">Sandbox</a>
-                            <a class="dropdown-item" href="./herausforderungen.html" target="_blank"
+                            <a class="dropdown-item" href="./sandbox.html"  rel="noopener">Sandbox</a>
+                            <a class="dropdown-item" href="./herausforderungen.html" 
                                 rel="noopener">Herausforderungen</a>
-                            <a class="dropdown-item" href="./ergebnisse.html" target="_blank"
+                            <a class="dropdown-item" href="./ergebnisse.html" 
                                 rel="noopener">Ergegnisse</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./verlauf.html" target="_blank" rel="noopener">Verlauf und
+                        <a class="nav-link" href="./verlauf.html"  rel="noopener">Verlauf und
                             Ergebnisse</a>
                     </li>
                 </ul>
@@ -593,7 +597,7 @@
                         <div class="row mt-4">
                             <div class="col-md-4 mb-4">
                                 <div class="about-skill-card text-center">
-                                    <i class="fas fa-rocket fa-3x icon-accent"></i>
+                                    <i class="fab fa-envira fa-3x icon-accent"></i>
                                     <h3>Projekte <br> Geist</h3>
                                     <div class="decor-line mx-auto"
                                         style="width: 50px; height: 1px; background: rgba(229, 228, 226, 0.1);"></div>
@@ -614,12 +618,11 @@
 
                             <div class="col-md-4 mb-4">
                                 <div class="about-skill-card text-center">
-                                    <i class="fas fa-network-wired fa-3x icon-accent"></i>
+                                    <i class="fas fa-music fa-3x icon-accent"></i>
                                     <h3>Musik<br> & Daten</h3>
                                     <div class="decor-line mx-auto"
                                         style="width: 50px; height: 1px; background: rgba(229, 228, 226, 0.1);"></div>
-                                    <p>Nutzung modernster Technologien und fundierter Datenanalysen zur
-                                        Entscheidungsfindung.</p>
+                                    <p>Escrbir algo sobre la libertad.</p>
                                 </div>
                             </div>
                         </div>
@@ -635,11 +638,11 @@
                 <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
 
                 <div class="row w-100">
-                    <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Über mich</a>
+                    <div class="col-md-4"><a class="footer-link" href="#"  rel="noopener">Über mich</a>
                     </div>
-                    <div class="col-md-4"><a class="footer-link" href="./impressum.html" target="_blank"
+                    <div class="col-md-4"><a class="footer-link" href="./impressum.html" 
                             rel="noopener">Impressum</a></div>
-                    <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Datenschutz</a>
+                    <div class="col-md-4"><a class="footer-link" href="#"  rel="noopener">Datenschutz</a>
                     </div>
                 </div>
 
