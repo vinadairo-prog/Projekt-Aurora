@@ -43,7 +43,7 @@
             background-color: #0f172a;
             /* Fondo oscuro forestal o #f8fafc */
             color: #e5e4e2;
-            background-image: url(./Images-Projekt-Aurora/Bäume_Stadt.jpg);
+            background-image: url(./Images-Projekt-Aurora/Deep_Woods1.jpg);
             background-repeat: no-repeat;
             /* Evita que se cuadruplique */
             background-size: cover;
@@ -181,7 +181,13 @@
             text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
         }
 
+        /* SECCIÓN DE CONTENIDO PRINCIPAL */
+        /* .main-content {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
+        } */
 
+     
         .main-content {
             flex-grow: 1;
             padding: 60px 0;
@@ -278,30 +284,8 @@
             opacity: 0.6;
             margin-top: 10px;
         }
-
-        /* Este es el balance perfecto: Oscuro para leer, transparente para ver la foto */
-        .glass-card {
-            background: rgba(20, 25, 35, 0.65) !important;
-            /* Azul/Gris oscuro */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(229, 228, 226, 0.2);
-            border-radius: 15px;
-            transition: 0.4s;
-            padding: 20px;
-            text-align: center;
-            color: #e5e4e2;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            background: rgba(30, 40, 60, 0.8) !important;
-            /* Se aclara un poco al tocarlo */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
-<!-- cambio -->
 
 <body>
 
@@ -311,7 +295,7 @@
             <a class="navbar-brand" href="./index.html">AURORA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
                 aria-controls="mainNav" aria-label="Toggle navigation">
-                <!-- veri si agrego <div class="content-wrapper">  -->
+              
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -326,9 +310,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="infoDropdown">
                             <a class="dropdown-item" href="./blog.html">Info Blog</a>
-                            <a class="dropdown-item" href="./deepwoods.html" >Deep
+                            <a class="dropdown-item" href="./deepwoods.html">Deep
                                 Woods</a>
-                            <a class="dropdown-item" href="./stadtbaum.html" >Bäume in der
+                            <a class="dropdown-item" href="./stadtbaum.html">Bäume in der
                                 Stadt</a>
                             <a class="dropdown-item" href="./waldundkunst.html">Wald und Kunst</a>
                         </div>
@@ -340,9 +324,9 @@
                             Wissenschaft
                         </a>
                         <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./gesundheit.html" >Wald und
+                            <a class="dropdown-item" href="./gesundheit.html">Wald und
                                 Gesundheit</a>
-                            <a class="dropdown-item" href="./krankheiten.html" >Waldkrankheiten</a>
+                            <a class="dropdown-item" href="./krankheiten.html">Waldkrankheiten</a>
                             <a class="dropdown-item" href="./klima.html">Wald und
                                 Klima</a>
                         </div>
@@ -355,22 +339,22 @@
                             Wirtschaft
                         </a>
                         <div class="dropdown-menu" aria-labelledby="economyDropdown">
-                            <a class="dropdown-item" href="./ressourcen.html" >Energie und
+                            <a class="dropdown-item" href="./ressourcen.html">Energie und
                                 Ressourcen</a>
-                            <a class="dropdown-item" href="./holzwirtschaft.html" >Holzwirtschaft</a>
+                            <a class="dropdown-item" href="./holzwirtschaft.html">Holzwirtschaft</a>
                         </div>
                     </li>
 
                     <!-- Dropdown: Simulation -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="simulationDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Eco-Simulation
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./sandbox.html" >Sandbox</a>
-                            <a class="dropdown-item" href="./herausforderungen.html" >Herausforderungen</a>
-                            <a class="dropdown-item" href="./ergebnisse.html" >Ergegnisse</a>
+                        <div class="dropdown-menu" aria-labelledby="simulationDropdown">
+                            <a class="dropdown-item" href="./sandbox.html">Sandbox</a>
+                            <a class="dropdown-item" href="./herausforderungen.html">Herausforderungen</a>
+                            <a class="dropdown-item" href="./ergebnisse.html">Ergebnisse</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -384,64 +368,36 @@
 
     <!-- HERO / JUMBOTRON SECTION (Común pero dinámico)
          Cambiando el style inline de background-image puedes usar fotos distintas por página.-->
+   
+<!-- HERO / JUMBOTRON SECTION (Común pero dinámico) -->
     <header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
         <div class="container hero-container">
-            <!-- Título dinámico de la subpágina -->
-            <h1 class="hero-title">Bäume und Stadt</h1>
-            <p class="hero-subtitle">Natur aus dem Asphalt</p>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <!-- Título Principal con tipografía Cinzel y resplandor sutil -->
+                    <h1 class="hero-title">Impressum</h1>
+                    
+                    <!-- Subtítulo / Lema con opacidad plata del Urbanist -->
+                    <p class="hero-subtitle mt-3">
+                        Zurück zu den Wurzeln – Der Wald als Ursprung und Zukunft unserer Lebensräume.
+                    </p>
+                    
+                    <!-- Pequeño texto aclaratorio/puente opcional -->
+                    <p class="small text-muted font-weight-light mt-2" style="letter-spacing: 1px;">
+                        Eine digitale Brücke zwischen Natur, Mensch und Technologie.
+                    </p>
+                </div>
+            </div>
         </div>
     </header>
-
+   <!--      cambio -->
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
     <main class="main-content">
         <div class="container">
 
             <!-- Aquí irá el contenido específico de cada una de las 16 páginas.
                  Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="container my-5">
-    <div class="row">
-        <div class="col-md-3">
-            <a href="#clima" style="text-decoration: none;">
-                <div class="glass-card">
-                    <i class="fas fa-thermometer-quarter fa-2x mb-3" style="color: #40e0d0;"></i>
-                    <h5>Microclima</h5>
-                    <p class="small">El aire acondicionado natural de Viena.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#asphalt" style="text-decoration: none;">
-                <div class="glass-card">
-                    <i class="fas fa-hammer fa-2x mb-3" style="color: #40e0d0;"></i>
-                    <h5>Asphalt-Krieg</h5>
-                    <p class="small">Recuperando el suelo para la vida.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#projekte" style="text-decoration: none;">
-                <div class="glass-card">
-                    <i class="fas fa-map-marked-alt fa-2x mb-3" style="color: #40e0d0;"></i>
-                    <h5>Cool Streets</h5>
-                    <p class="small">Zieglergasse y Neubaugasse.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#biofilia" style="text-decoration: none;">
-                <div class="glass-card">
-                    <i class="fas fa-heartbeat fa-2x mb-3" style="color: #40e0d0;"></i>
-                    <h5>Biofilia</h5>
-                    <p class="small">Salud mental bajo la sombra.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-                </div>
-            </div>
+            
 
         </div>
     </main>
@@ -453,10 +409,10 @@
                 <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
 
                 <div class="row w-100">
-                    <div class="col-md-4"><a class="footer-link" href="./uebermich.html" >Über mich</a>
+                    <div class="col-md-4"><a class="footer-link" href="./uebermich.html">Über mich</a>
                     </div>
-                    <div class="col-md-4"><a class="footer-link" href="./impressum.html" >Impressum</a></div>
-                    <div class="col-md-4"><a class="footer-link" href="./datenschutz.html" >Datenschutz</a>
+                    <div class="col-md-4"><a class="footer-link" href="./impressum.html">Impressum</a></div>
+                    <div class="col-md-4"><a class="footer-link" href="./datenschutz.html">Datenschutz</a>
                     </div>
                 </div>
 
@@ -468,15 +424,3 @@
 </body>
 
 </html>
-<!--  Pasos para crear tus archivos partiendo de este template:
-
-2. **Cómo duplicarlo para una subpágina nueva:**
-   * Haz una copia de `template.html` y cámbiale el nombre al de tu subpágina (ej: `krankheiten.html`).
-3. **Qué debes modificar en cada copia:**
-   * **El título en el `<head>` (línea 7):** Cambia `[Nombre de la Página]` por el título correcto (ej: `Waldkrankheiten`).
-   * **La imagen de fondo en el Jumbotron (línea 138):** Verás que el elemento `<header>` tiene un estilo inline: `style="background-image: url('./assets/images/default-bg.jpg');"`. Solo tienes que cambiar esa ruta por la imagen correspondiente a esa sección específica.
-   * **El texto del Jumbotron (líneas 141-142):** Reemplaza `[Título de la Subpágina]` y su descripción corta.
-   * **El Bloque de Contenido Principal (líneas 148 a 161):** Elimina el div de ejemplo y escribe o pega aquí el contenido específico (las grids, columnas, o información de esa sección).
-
-¡Todo lo demás (navbar, footer y los estilos base) se quedará intacto y perfectamente estilizado en cada página que dupliques! Dime si la estructura te convence y cuál es el siguiente paso que deseas realizar.
- -->

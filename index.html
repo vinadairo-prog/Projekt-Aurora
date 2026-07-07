@@ -40,17 +40,19 @@
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav w-100 text-center "> <!-- ml-auto? -->
 
-        <!-- Dropdown : Info -->
+        <!-- Dropdown : Info https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noreferrer Información en inglés sobre como, Noopener está relacionado con la seguridad. Soluciona un problema de seguridad en los navegadores conocido como "reverse tab nabbing", que permite a un atacante tener acceso parcial a la página anterior y se usa normalmente cuando un enlace está configurado para abrirse en una nueva pestaña con target="_blank".
+
+        Nota: Con el lanzamiento de Chrome 88, todos los enlaces con target="_blank" se considerarán noopener. -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Infos
           </a>
           <div class="dropdown-menu" aria-labelledby="infoDropdown">
-            <a class="dropdown-item" href="./blog.html" target="_blank" rel="noopener">Info Blog</a>
-            <a class="dropdown-item" href="./deepwoods.html" target="_blank" rel="noopener">Deep Woods</a>
-            <a class="dropdown-item" href="./baeumestadt.html" target="_blank" rel="noopener">Bäume in der Stadt</a>
-            <a class="dropdown-item" href="./waldundkunst.html" target="_blank" rel="noopener">Wald und Kunst</a>
+            <a class="dropdown-item" href="./blog.html">Info Blog</a>
+            <a class="dropdown-item" href="./deepwoods.html">Deep Woods</a>
+            <a class="dropdown-item" href="./baeumestadt.html">Bäume in der Stadt</a>
+            <a class="dropdown-item" href="./waldundkunst.html">Wald und Kunst</a>
           </div>
         </li>
         <!-- Dropdown: Ciencia -->
@@ -60,9 +62,9 @@
             Wissenschaft
           </a>
           <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-            <a class="dropdown-item" href="./gesundheit.html" target="_blank" rel="noopener">Wald und Gesundheit</a>
-            <a class="dropdown-item" href="./krankheiten.html" target="_blank" rel="noopener">Waldkrankheiten</a>
-            <a class="dropdown-item" href="./klima.html" target="_blank" rel="noopener">Wald und Klima</a>
+            <a class="dropdown-item" href="./gesundheit.html">Wald und Gesundheit</a>
+            <a class="dropdown-item" href="./krankheiten.html">Waldkrankheiten</a>
+            <a class="dropdown-item" href="./klima.html">Wald und Klima</a>
           </div>
         </li>
 
@@ -73,22 +75,21 @@
             Wirtschaft
           </a>
           <div class="dropdown-menu" aria-labelledby="economyDropdown">
-            <a class="dropdown-item" href="./ressourcen.html" target="_blank" rel="noopener">Energie und Ressourcen</a>
-            <a class="dropdown-item" href="./holzwirtschaft.html" target="_blank" rel="noopener">Holzwirtschaft</a>
+            <a class="dropdown-item" href="./ressourcen.html">Energie und Ressourcen</a>
+            <a class="dropdown-item" href="./holzwirtschaft.html">Holzwirtschaft</a>
           </div>
         </li>
 
         <!-- Dropdown: Simulation -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="#" id="simulationDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Eco-Simulation
           </a>
-          <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-            <a class="dropdown-item" href="./sandbox.html" target="_blank" rel="noopener">Sandbox</a>
-            <a class="dropdown-item" href="./herausforderungen.html" target="_blank"
-              rel="noopener">Herausforderungen</a>
-            <a class="dropdown-item" href="./ergebnisse.html" target="_blank" rel="noopener">Ergegnisse</a>
+          <div class="dropdown-menu" aria-labelledby="simulationDropdown">
+            <a class="dropdown-item" href="./sandbox.html">Sandbox</a>
+            <a class="dropdown-item" href="./herausforderungen.html">Herausforderungen</a>
+            <a class="dropdown-item" href="./ergebnisse.html">Ergebnisse</a>
           </div>
         </li>
         <li class="nav-item">
@@ -154,11 +155,11 @@
         <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
 
         <div class="row w-100">
-          <div class="col-md-4"><a class="footer-link" href="./uebermich.html" target="_blank" rel="noopener">Über mich</a></div>
+          <div class="col-md-4"><a class="footer-link" href="./uebermich.html">Über mich</a></div>
           <!-- <div class="col-md-4"><a class="footer-link" href="https://adobe.com" target="_blank" rel="noopener">Referenz</a></div> -->
           <!-- referenz für Text Logo -->
-          <div class="col-md-4"><a class="footer-link" href="./impressum.html" target="_blank" rel="noopener">Impressum</a></div>
-          <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Datenschutz</a></div>
+          <div class="col-md-4"><a class="footer-link" href="./impressum.html">Impressum</a></div>
+          <div class="col-md-4"><a class="footer-link" href="./datenschutz.html">Datenschutz</a></div>
         </div>
 
         <p class="copyright">&copy; 2026 Adair Araujo Valenzuela</p>
