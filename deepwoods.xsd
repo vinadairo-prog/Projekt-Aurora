@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Elemento raíz -->
+  <xs:element name="deepwoods">
+    <xs:complexType>
+      <xs:sequence>
+        
+        <!-- Lista de artículos dinámicos -->
+        <xs:element name="article" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kategorie" type="xs:string" />
+              <xs:element name="titel" type="xs:string" />
+              <xs:element name="untertitel" type="xs:string" />
+              <xs:element name="text" type="xs:string" />
+              
+              <!-- Restricción de valores para la etiqueta -->
+              <xs:element name="tag">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Wissenschaft" />
+                    <xs:enumeration value="Kultur" />
+                    <xs:enumeration value="Wirtschaft" />
+                    <xs:enumeration value="Ökologie" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            
+            <!-- Atributo obligatorio obligatorio (id) -->
+            <xs:attribute name="id" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

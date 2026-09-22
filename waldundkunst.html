@@ -19,272 +19,253 @@
         rel="stylesheet">
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+   
+<style>
+    /* ============================================================
+       VARIABLES DE COLOR MÍSTICO — para legibilidad de subtítulos
+       ============================================================ */
+    :root {
+        --gold-mystic: #d9c27e;
+        --turquoise-accent: #5eead4;
+        --muted-legible: #a3a8c9;
+    }
 
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
+    html, body {
+        height: 100%;
+    }
 
-        .main-content {
-            flex-grow: 1;
-            /* Esto hace que esta sección "crezca" y empuje el footer abajo */
-            padding: 60px 0;
-            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
-        }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #0f172a;
+        color: #e5e4e2;
+        background-image: url(./Images-Projekt-Aurora/hermosaManoconHojas.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: 'Urbanist', sans-serif;
+        overflow-x: hidden;
+    }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #0f172a;
-            /* Fondo oscuro forestal o #f8fafc */
-            color: #e5e4e2;
-            background-image: url(./Images-Projekt-Aurora//hermosaManoconHojas.jpg);
-            background-repeat: no-repeat;
-            /* Evita que se cuadruplique */
-            background-size: cover;
-            /* Estira la imagen para que cubra TODO el ancho y alto */
-            background-position: center;
-            /* Centra la imagen para que no se corte feo */
-            background-attachment: fixed;
-            /* Hace que la imagen se quede quieta mientras haces scroll (estilo index) */
-            font-family: 'Urbanist', sans-serif;
-            overflow-x: hidden;
-        }
+    /* CAMBIO: tenías .main-content declarado 3 veces (una comentada). El navegador
+       solo aplicaba la última — borré las dos primeras versiones muertas. */
+    .main-content {
+        flex-grow: 1;
+        padding: 60px 0;
+        background: rgba(15, 23, 42, 0.6) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(229, 228, 226, 0.15);
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+    }
 
+    /* NAVBAR */
+    .navbar {
+        width: 100%;
+        background-color: rgba(15, 25, 45, 0.7) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(229, 228, 226, 0.2);
+        padding: 0.8rem 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-        .main-content {
-            flex-grow: 1;
-            padding: 60px 0;
-            /* Fondo muy transparente pero con luz */
-            background: rgba(255, 255, 255, 0.05) !important;
-            /* El secreto: desenfoque fuerte para que parezca neblina */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            /* Borde plata sutil para dar forma */
-            border-top: 1px solid rgba(229, 228, 226, 0.1);
-        }
+    .navbar-nav {
+        display: flex !important;
+        justify-content: space-around !important;
+        width: 100%;
+    }
 
-        /* NAVBAR: Sincronizada con el cielo del index */
-        .navbar {
-            width: 100%;
-            background-color: rgba(15, 25, 45, 0.7) !important;
-            backdrop-filter: blur(10px);
-            /* Efecto cristal */
-            border-bottom: 1px solid rgba(229, 228, 226, 0.2);
-            padding: 0.8rem 2rem;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+    .nav-link {
+        color: #e5e4e2 !important;
+        transition: 0.4s ease;
+    }
 
-        /* Esto obligará a la lista interna del menú a repartirse uniformemente */
-        .navbar-nav {
-            display: flex !important;
-            justify-content: space-around !important;
-            width: 100%;
-        }
+    .nav-link:hover {
+        color: #ffffff !important;
+        text-shadow: 0 0 12px rgba(229, 228, 226, 0.6) !important;
+        transform: scale(1.05);
+    }
 
-        .nav-link {
-            color: #e5e4e2 !important;
-            /* Plata base */
-            transition: 0.4s ease;
-        }
+    .navbar-toggler-icon {
+        filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
+    }
 
-        .nav-link:hover {
-            color: #ffffff !important;
-            text-shadow: 0 0 12px rgba(229, 228, 226, 0.6) !important;
-            transform: scale(1.05);
-        }
+    .navbar-brand {
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
+        color: #40e0d0 !important;
+        letter-spacing: 2px;
+    }
 
-        /* Icono menú móvil (Las 3 rayitas brillantes) */
-        .navbar-toggler-icon {
-            filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
-        }
+    .dropdown-menu {
+        background-color: rgba(20, 30, 55, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(229, 228, 226, 0.2);
+    }
 
-        .navbar-brand {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: #40e0d0 !important;
-            /* Turquesa Aurora o bien color: #e5e4e2 !important; */
-            letter-spacing: 2px;
-        }
+    .dropdown-item {
+        color: #e5e4e2 !important;
+    }
 
+    .dropdown-item:hover {
+        background-color: rgba(64, 224, 208, 0.2);
+        color: #fff !important;
+    }
 
-        .dropdown-menu {
-            background-color: rgba(20, 30, 55, 0.85);
-            /* Azul noche */
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(229, 228, 226, 0.2);
-        }
+    /* JUMBOTRON / HERO */
+    .jumbotron-hero {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        padding: 100px 0;
+        margin-bottom: 0;
+        border-radius: 0;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
 
-        .dropdown-item {
-            color: #e5e4e2 !important;
-        }
+    .jumbotron-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.35);
+        z-index: 1;
+    }
 
-        .dropdown-item:hover {
-            background-color: rgba(64, 224, 208, 0.2);
-            /* Aguamarina muy suave */
-            color: #fff !important;
-        }
+    .hero-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
 
-        /* JUMBOTRON BASE (El fondo dinámico se define en el HTML con style inline) */
-        .jumbotron-hero {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: relative;
-            padding: 100px 0;
-            margin-bottom: 0;
-            border-radius: 0;
-           /*  background: radial-gradient(circle at center,
-                    rgba(255, 255, 255, 0.1) 0%,
-                    rgba(10, 35, 28, 0.4) 40%,
-                    rgba(5, 15, 10, 0.7) 100%) !important; */
-            /* color: #e5e4e2; */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        }
+    /* CAMBIO: tenías .hero-title declarado 2 veces por separado — las fusioné en una */
+    .hero-title {
+        font-family: 'Cinzel', serif;
+        letter-spacing: 6px;
+        font-weight: 500;
+        font-size: 3rem;
+        color: #ffffff;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.8);
+    }
 
-        .jumbotron-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Bajamos la opacidad a 0.3 para que la foto sea la protagonista */
-            background-color: rgba(15, 23, 42, 0.35);
-            z-index: 1;
-        }
+    .hero-subtitle {
+        color: rgba(229, 228, 226, 0.85) !important;
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
 
-        .hero-title {
-            /* ... (mantenemos lo anterior pero con este resplandor) */
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.8);
-        }
+    .image-wrapper {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
 
-        .hero-title {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 6px;
-            font-weight: 500;
-            font-size: 3rem;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
-        }
+    .image-wrapper:hover img {
+        transform: scale(1.05);
+    }
 
-        /* SECCIÓN DE CONTENIDO PRINCIPAL */
-        /* .main-content {
-            padding: 60px 0;
-            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
-        } */
+    /* FOOTER */
+    footer {
+        background: rgba(5, 15, 10, 0.8) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px 0;
+        margin-top: auto;
+    }
 
-     
-        .main-content {
-            flex-grow: 1;
-            padding: 60px 0;
+    .footer-link {
+        color: #e5e4e2 !important;
+        transition: 0.3s;
+    }
 
-            /* CAMBIO CLAVE: Usamos un azul noche muy transparente (60%) */
-            /* En lugar de blanco, usamos (15, 23, 42) */
-            background: rgba(15, 23, 42, 0.6) !important;
+    .footer-link:hover {
+        color: #40e0d0 !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+    }
 
-            /* El blur debe ser potente para que se sienta el "Milchige Effekt" */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 
-            /* Un borde superior para separar el Hero del contenido */
-            border-top: 1px solid rgba(229, 228, 226, 0.15);
+    .footer-content .row {
+        margin: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
-            /* Un ligero sombreado interno para dar profundidad */
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
-        }
+    .footer-logo {
+        margin-top: 5px;
+        font-size: 1.6rem;
+        letter-spacing: 6px;
+    }
 
-        .image-wrapper {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
+    .copyright {
+        font-size: 0.8rem;
+        opacity: 0.6;
+        margin-top: 10px;
+    }
 
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+    /* CAMBIO: comenté este bloque — mezclaba scroll-snap nativo con el carrusel
+       de Bootstrap 4 (que ya mueve las slides con JS/transform). Puede causar
+       doble scroll o comportamiento raro. Si algún día quieres reactivarlo,
+       pruébalo aparte y con cuidado. */
+    
+    .carousel {
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        anchor-name: carousel;
+    }
+    .carousel-slide {
+        scroll-snap-align: center;
+    }
+    .carousel-item {
+        scroll-snap-align: center;
+        container-type: scroll-state;
+    }
+  
 
-        .image-wrapper:hover img {
-            transform: scale(1.05);
-        }
+    /* ============================================================
+       LEGIBILIDAD DE TÍTULOS (paleta mística: dorado + turquesa)
+       ============================================================ */
+    .wald-kunst-essay h2 {
+        color: var(--gold-mystic);
+    }
 
-        .hero-subtitle {
-            color: rgba(229, 228, 226, 0.85) !important;
-            /* Plata con 85% de opacidad */
-            font-size: 1.25rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
+    h3.font-cinzel {
+        color: var(--turquoise-accent) !important;
+    }
 
-        /* FOOTER */
-
-
-        footer {
-            background: rgba(5, 15, 10, 0.8) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 0;
-            margin-top: auto;
-            /* Empuja el footer al final */
-        }
-
-        .footer-link {
-            color: #e5e4e2 !important;
-            transition: 0.3s;
-        }
-
-        .footer-link:hover {
-            color: #40e0d0 !important;
-            /* Brillo Aguamarina */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            /* Esto separa el logo de los links y los links del copyright */
-        }
-
-        .footer-content .row {
-            margin: 10px 0;
-            /* Espacio arriba y abajo de la fila de links */
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            /* Centra las columnas si sobran espacios */
-        }
-
-        .footer-logo {
-            margin-top: 5px;
-            font-size: 1.6rem;
-            letter-spacing: 6px;
-        }
-
-        .copyright {
-            font-size: 0.8rem;
-            opacity: 0.6;
-            margin-top: 10px;
-        }
-    </style>
+    .text-muted {
+        color: var(--muted-legible) !important;
+    }
+    /* Texto pequeño del Hero — necesita más contraste que el resto porque
+   va sobre una foto (violeta), no sobre el fondo sólido azul-noche */
+.hero-tagline {
+    color: #f1eefc !important;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 1px 1px 3px rgba(0, 0, 0, 0.95);
+}
+</style>
 </head>
 
 <body>
@@ -362,7 +343,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./verlauf.html" target="_blank" rel="noopener">Verlauf und
-                            Ergebnisse</a>
+                            Merkliste</a>
                     </li>
                 </ul>
             </div>
@@ -386,23 +367,417 @@
                     </p>
                     
                     <!-- Pequeño texto aclaratorio/puente opcional -->
-                    <p class="small text-muted font-weight-light mt-2" style="letter-spacing: 1px;">
-                        Eine digitale Brücke zwischen Natur, Mensch und Technologie.
-                    </p>
+                    
+<p class="small hero-tagline font-weight-light mt-2" style="letter-spacing: 1px;">
+    Eine digitale Brücke zwischen Natur, Mensch und Technologie.
+</p>
                 </div>
             </div>
         </div>
     </header>
    <!--      cambio -->
     <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
-    <main class="main-content">
-        <div class="container">
+<main class="main-content">
+       <!-- SECCIÓN PRINCIPAL DE CONTENIDO -->
+<div class="container my-5">
+<!-- Introducción Curatorial al Carrusel -->
+<div class="row justify-content-center mb-4">
+  <div class="col-lg-10 text-center">
+    <p class="lead font-italic" style="color: #cbd5e1; line-height: 1.7;">
+      Die im Karussell versammelten Werke stammen aus über einem Jahrhundert Kunstgeschichte – vom Impressionismus über den Symbolismus bis zum Expressionismus – und zeigen doch alle denselben Bezugspunkt: den Baum als Träger von Bedeutung, nicht nur als Landschaftselement. Ob bei Monets flüchtigem Lichtspiel, Van Goghs innerer Bewegtheit, Klimts golden verdichteter Symbolik oder Friedrichs romantischer Naturmystik – jedes Werk übersetzt die Beziehung zwischen Mensch und Baum in eine eigene visuelle Sprache. Diese Vielfalt an Epochen, Stilen und kulturellen Kontexten bildet die Grundlage, um im Folgenden zu zeigen, wie tief die Bildgeschichte des Baumes mit Fragen von Identität, Erinnerung und emotionalem Ausdruck verwob ist.
+    </p>
+  </div>
+</div>
+  <!-- 1. El Carrusel (Visual) -->
+  <div class="row mb-5">
+    <div class="col-12">
 
-            <!-- Aquí irá el contenido específico de cada una de las 16 páginas.
-                 Por ejemplo, tarjetas, formularios, simuladores, tablas, etc. -->
-            
+       <!-- 1. CONTENEDOR: Atributo 'data-ride' (sin -bs-) -->
+<div id="carouselKunst" class="carousel slide" data-ride="carousel">
+  
+  <!-- Indicadores: Usan 'data-target' (sin -bs-) -->
+  <ol class="carousel-indicators">
+  <li data-target="#carouselKunst" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselKunst" data-slide-to="1"></li>
+  <li data-target="#carouselKunst" data-slide-to="2"></li>
+  <li data-target="#carouselKunst" data-slide-to="3"></li>
+  <li data-target="#carouselKunst" data-slide-to="4"></li>
+  <li data-target="#carouselKunst" data-slide-to="5"></li>
+  <li data-target="#carouselKunst" data-slide-to="6"></li>
+  <li data-target="#carouselKunst" data-slide-to="7"></li>
+  <li data-target="#carouselKunst" data-slide-to="8"></li>
+  <li data-target="#carouselKunst" data-slide-to="9"></li>
+  <li data-target="#carouselKunst" data-slide-to="10"></li>
+  <li data-target="#carouselKunst" data-slide-to="11"></li>
+  <li data-target="#carouselKunst" data-slide-to="12"></li>
+  
+  <li data-target="#carouselKunst" data-slide-to="13"></li>
+  <li data-target="#carouselKunst" data-slide-to="14"></li>
+  <li data-target="#carouselKunst" data-slide-to="15"></li>
 
-        </div>
+</ol>
+
+  <!-- 2. CONTENEDOR DE IMÁGENES -->
+  <div class="carousel-inner rounded-3 shadow-lg">
+    
+    <!-- Imagen 1 (Lleva 'active') -->
+    <div class="carousel-item active" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/1891_Monet_The_four_trees_anagoria.jpg" class="d-block w-100" alt="Obra 1" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Die vier Bäume, C. Monet, 1891</h5>
+        <p>Vier Pappeln lösen sich im flirrenden Licht fast auf – der Baum wird zum Träger flüchtiger Wahrnehmung statt fester Form.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 2 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Van_Gogh_-_Unterholz.jpeg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Bäume und Unterholz, Van Gogh, 1887</h5>
+        <p>Wirbelnde Pinselzüge verwandeln das Unterholz in einen Ausdruck innerer Bewegtheit – Natur als Spiegel psychischer Spannung.</p>
+      </div>
+    </div>
+    <!-- Imagen 3 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Klimt_Tree_of_Life_1909.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Baum des Lebens, G. Klimt, 1909</h5>
+        <p>Goldene Spiralen verdichten den Baum zum universellen Symbol von Leben, Tod und ewiger Wiederkehr.</p>
+      </div>
+    </div>
+    <!-- Imagen 4 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Caspar_David_Friedrich_The_Tree_of_Crows.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Der Baum der Krähen, Caspar D. Friedrich, 1822</h5>
+        <p>Ein toter, von Raben umkreister Baum vor Abenddämmerung – romantische Naturmystik als Sinnbild von Vergänglichkeit.</p>
+      </div>
+    </div>
+    <!-- Imagen 5 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Emily_Carr.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Forest Interior, Emily Carr, 1942</h5>
+        <p>Wirbelnde, fast atmende Baumstämme – der Wald als lebendiger, in sich kreisender Organismus.</p>
+      </div>
+    </div>
+    <!-- Imagen 6 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Egon_Schiele_-_Vier_Bäume_-_3917_-_Österreichische_Galerie_Belvedere.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Vier Bäume, Egon Schiele, 1917</h5>
+        <p>Kahle, fast menschlich wirkende Baumfiguren vor sinkender Sonne – Einsamkeit und Endlichkeit als stille Zeichen.</p>
+      </div>
+    </div>
+    <!-- Imagen 7 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Fernand Khnopff.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">In Fosset, ein Bach, Fernand Khnopff, 1897</h5>
+        <p>Stille, symbolistische Waldlandschaft – die Natur als Schwelle zu einer unbewussten, traumähnlichen Welt.</p>
+      </div>
+    </div>
+    <!-- Imagen 8 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Henri_Rousseau_-_Le_Rêve_-_Google_Art_ProjectFXD.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Le Rêve, Henri Rousseau, 1910</h5>
+        <p>Ein üppiger, unwirklicher Dschungel als Bühne des Unbewussten – Traum und Wald verschmelzen zu einem Bild.</p>
+      </div>
+    </div>
+    <!-- Imagen 9 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/acrilicoBosqueAnaCris.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Waldseele I</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – Acryl auf Leinwand.</p>
+      </div>
+    </div>
+    <!-- Imagen 10 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/Ana Cris Greenhouse.jpeg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Greenhouse, Ana Bertina Aguilera Husch, 2023
+        </h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum.</p>
+      </div>
+    </div>
+    <!-- Imagen 10B -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/acrilicoBosqueAnaCris1.jpg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Waldseele II</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – Acryl auf Leinwand.</p>
+      </div>
+    </div>
+    <!-- Imagen 10C -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/bosqueColoridoAnaCris.jpeg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Wald in Farben</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – Acryl auf Leinwand.</p>
+      </div>
+    </div>
+    <!-- Imagen 10D -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora/manoHerbstAna-Cris.jpeg" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Hand des Herbsts </h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum</p>
+      </div>
+    </div>
+    <!-- Imagen 11 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora//Sabina1.png" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Atmende Spuren I</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – digitale Illustration.</p>
+      </div>
+    </div>
+    <!-- Imagen 12 -->
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora//Sabina2.png" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Atmende Spuren II</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – digitale Illustration.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-interval="5000">
+      <img src="./Images-Projekt-Aurora//Sabina3.png" class="d-block w-100" alt="Obra 2" style="height: 500px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.6); border-radius: 8px;">
+        <h5 class="font-cinzel">Atmende Spuren III</h5>
+        <p>Eine moderne Interpretation des Waldes als lebendiger, symbolischer Raum – digitale Illustration.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 3. CONTROLES: Usan 'data-target' y 'data-slide' (sin -bs-) -->
+  <a class="carousel-control-prev" href="#carouselKunst" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselKunst" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+  </div>
+</div>
+ <div class="row justify-content-center mb-5">
+    <div class="col-lg-8 text-center content-box">
+  <!-- Texto introductorio redactado -->
+   <details class="my-4 p-3 style-box">
+   
+  <summary class="h4 text-light cursor-pointer">
+    📖 Essay lesen: Wald und Kunst (Klicken zum Ausklappen)
+  </summary>
+  <div class="mt-3">
+    <!-- Aquí pegas todo tu ensayo con sus notas completas -->
+ <!-- Botón de descarga directa -->
+<button class="btn btn-outline-light" 
+        onclick="downloadSectionById('essay-wald-kunst', 'Wald_und_Kunst_Essay.txt')">
+  <i class="bi bi-download"></i> Essay herunterladen
+</button>
+
+<!-- Botón para guardar en Merkliste -->
+<button class="btn btn-outline-warning" 
+        onclick="addToMerklisteById('essay-wald-kunst', 'Wald und Kunst: Zeichen, Erinnerung')">
+  <i class="bi bi-bookmark-plus"></i> Zur Merkliste
+</button>
+ 
+        <section class="wald-kunst-essay" id="essay-wald-kunst">
+      <h2 class="font-cinzel">Wald und Kunst: Zeichen, Erinnerung und das Unbewusste</h2>
+      
+
+  <p>
+    Der Baum ist seit Jahrtausenden mehr als ein biologisches Wesen – er ist Zeichen.
+    Bei den Maya galt die Ceiba als Weltenbaum, der Unterwelt, irdische Ebene und Himmel
+    miteinander verband. Im alten Ägypten stand der Baum für Auferstehung und
+    frühlingshafte Erneuerung, während die Palme als Attribut des Gottes Osiris galt.
+    In Oaxaca, Mexiko, verkörpert der Árbol del Tule – eine jahrtausendealte Ahuehuete –
+    bis heute lokale Identität und Beständigkeit, so wie charakteristische Arten der
+    österreichischen Wälder, etwa Fichte, Tanne oder Lärche, Teil des kollektiven
+    Gedächtnisses eines anderen Kulturraums sind. In beiden Fällen ist der Baum kein
+    bloßer Bestandteil der Landschaft, sondern Träger von Identität – ein Zeichen, das
+    eine Gemeinschaft von sich selbst erzählt.
+  </p>
+
+  <p>
+    Genau an diesem Punkt wird die Semiotik zum notwendigen Werkzeug, um zu verstehen,
+    <em>wie</em> der Baum zum Träger von Bedeutung wird. Die Semiotik untersucht, wie
+    Zeichen Bedeutung erzeugen und vermitteln<sup><a href="#fn1">[1]</a></sup> – und im
+    Wald zeigt sich, dass diese Bedeutungsproduktion nicht erst beim Menschen beginnt.
+    Die Natur selbst ist ein lebendiges Kommunikationsnetz (Biosemiotik): Bäume tauschen
+    über unterirdische Mykorrhiza-Netzwerke chemische und elektrische Signale
+    aus<sup><a href="#fn2">[2]</a></sup>, Organismen senden und lesen fortlaufend Zeichen,
+    um zu überleben. Der Wald „spricht" bereits, bevor der Mensch ihn symbolisch auflädt –
+    und genau darin liegt seine tiefere Verwandtschaft mit dem Unbewussten: Beide sind
+    Systeme, die kommunizieren, ohne dabei auf bewusste, sprachlich artikulierte
+    Bedeutung angewiesen zu sein.
+  </p>
+
+  <p>
+    Kunst übernimmt hier die Rolle der Übersetzerin. Sie macht sichtbar und mitteilbar,
+    was sonst stumm, diffus oder unbewusst bliebe – sei es das biologische Signal eines
+    Ökosystems oder die innere Spannung eines Traumas<sup><a href="#fn3">[3]</a></sup>.
+    Genau diese Übersetzungsleistung ist es, was ästhetische Erfahrung und psychische
+    Sublimation teilen: Beide verwandeln unverarbeitetes, unbewusstes Material in etwas
+    Sicht- und Mitteilbares. So wie künstlerischer Ausdruck als Kanal für das Unbewusste
+    dient, kann auch das Zusammensein mit Wäldern eine therapeutische, regulierende
+    Wirkung entfalten. Diese Seite vertritt die These, dass der Kontakt mit dem Wald –
+    ähnlich wie künstlerisches Schaffen – dazu beiträgt, seelische Prozesse zu
+    verarbeiten, die dem bewussten Denken oft verschlossen bleiben, und so Wohlbefinden,
+    Entscheidungen und das Sein des Menschen ganzheitlich mitprägt.
+  </p>
+
+  <p>
+    Diese Übersetzungsleistung wird besonders anschaulich in der Land Art, einem
+    künstlerischen Konzept, das die Landschaft selbst zur Leinwand macht: Werke
+    entstehen im Freien, aus vergänglichen, natürlichen Materialien, ausgesetzt Wind,
+    Licht und Verfall. Ein besonders eindrückliches Beispiel ist der Bosque de Oma im
+    spanischen Baskenland, wo der Künstler Agustín Ibarrola lebende Bäume mit Figuren,
+    Augen und geometrischen Mustern bemalte, sodass sich Bilder erst beim Durchqueren
+    des Waldes in Bewegung erschließen<sup><a href="#fn4">[4]</a></sup>. Hier wird der
+    Wald buchstäblich zum begehbaren Kunstwerk – die Grenze zwischen Naturraum und
+    künstlerischem Zeichen löst sich auf.
+  </p>
+
+  <p>
+    Aus dieser Verschmelzung entsteht auch die ethische Dimension des Themas: Wald und
+    Kunst stehen in wechselseitiger Fürsorge zueinander<sup><a href="#fn3">[3]</a></sup>.
+    Der Wald liefert der Kunst Material, Inspiration und Raum, während die Kunst dem
+    Wald eine Stimme verleiht, ihn ins kollektive Bewusstsein rückt und so zu seinem
+    Schutz beiträgt. Weil Kunst als emotionales Kommunikationsmittel wirkt, bleiben
+    ökologisches Wissen und Sorge um den Wald nicht abstrakte Information, sondern
+    werden zu emotional verankerter, langfristig wirksamer Erfahrung.
+  </p>
+
+  <p>
+    In diesem Sinn ist die Konvivenz mit dem Wald kein romantisches Zusatzthema neben
+    der Kunst, sondern ihr strukturelles Äquivalent: beides Formen der Sublimation jener
+    Traumata und unbewussten Anliegen, die der reinen Vernunft verschlossen bleiben,
+    aber im Kontakt mit Zeichen – seien es künstlerische Bilder, ein bemalter Baum oder
+    die stille Sprache eines Ökosystems – einen Weg zur Bewusstwerdung und Heilung
+    finden.
+  </p>
+
+  <ol class="fussnoten">
+    <li id="fn1">
+      Zur Semiotik des grafischen Kunst als Bedeutungssystem, s.
+      <a href="https://www.scielo.cl/scielo.php?pid=S0717-73562005000100003&script=sci_arttext" target="_blank" rel="noopener">
+        SciELO Chile – Arte gráfico, sistemas de representación visual y semiótica
+      </a>; sowie
+      <a href="https://filosofiaenlared.substack.com/p/arte-signos-semiotica" target="_blank" rel="noopener">
+        Filosofía en la Red – Arte, signos, semiótica
+      </a>.
+    </li>
+    <li id="fn2">
+      Zur Biosemiotik des Waldes und den Mykorrhiza-Netzwerken, in Anlehnung an Eduardo
+      Kohns Konzept „Wie Wälder denken", s.
+      <a href="https://www.redalyc.org/journal/6157/615775531009/html/" target="_blank" rel="noopener">
+        Redalyc – Rezension zu Eduardo Kohn, „Cómo piensan los bosques"
+      </a>.
+    </li>
+    <li id="fn3">
+      Zur Rolle der Kunst als Vermittlerin zwischen ökologischen und emotionalen
+      Bedeutungssystemen und zur wechselseitigen Fürsorge von Wald und Kunst, s.
+      <a href="https://www.gob.mx/semarnat%7Ceducacionambiental/articulos/cuando-el-arte-tambien-siembra-arboles" target="_blank" rel="noopener">
+        SEMARNAT – Cuando el arte también siembra árboles
+      </a>; sowie zur Bedeutung ökologischer Interaktionen für kollektive Sinnbildung,
+      <a href="https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1665-12002018000100065" target="_blank" rel="noopener">
+        SciELO México – Interacciones ecológicas y colectivos
+      </a>.
+    </li>
+    <li id="fn4">
+      Zum Bosque de Oma und dem Werk Agustín Ibarrolas, s.
+      <a href="https://www.lasexta.com/viajestic/curioso/bosque-pintado-oma-arte-plena-naturaleza_202507296888c701ffbf4a1a6747db01.html" target="_blank" rel="noopener">
+        LaSexta – Bosque de Oma, arte en plena naturaleza
+      </a>.
+    </li>
+  </ol>
+<!-- Botón para guardar en Merkliste -->
+<button class="btn btn-outline-warning" 
+        onclick="addToMerklisteById('essay-wald-kunst', 'Wald und Kunst: Zeichen, Erinnerung')">
+  <i class="bi bi-bookmark-plus"></i> Zur Merkliste
+</button>
+</section>
+    </div>
+  </div>
+   </div>
+</details>
+<!-- 2. Apartado de las Artistas  -->
+<h3 class="text-center font-cinzel mb-4" style="color: #0077b6;">Beitragende Künstlerinnen</h3>
+
+<div class="row">
+  
+  <!-- Artista 1: Ana Bertina Aguilera Husch -->
+  <div class="col-md-6 mb-4">
+    <div class="content-box h-100 p-4 d-flex align-items-start" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(229, 228, 226, 0.2); border-radius: 8px; color: #fff;">
+      
+      <!-- Imagen de perfil fija -->
+      <img src="Images-Projekt-Aurora/hermosaManoconHojas.jpg" class="rounded-circle mr-3" style="width: 100px; height: 100px; object-fit: cover; flex-shrink: 0;" alt="Ana Bertina Aguilera Husch">
+      
+      <!-- Contenedor único de texto -->
+      <div>
+        <span class="badge badge-info mb-2">Wald &amp; Kunst</span>
+        <h3 class="font-cinzel h4 mb-1">Ana Bertina Aguilera Husch und Christian Santana Prinz
+        </h3>
+        <h4 class="h6 text-muted mb-3">Illustratorin, Maler &amp; Malerin</h4>
+        <div id="Ana Bertina Aguilera Husch">
+       <p>
+  Auf ihre ganz eigene Weise erforscht das Künstler- und Ehepaar Ana B. Hursh (Aguilera) und Christian Santana Prinz das Genre der Landschaft als vielschichtigen symbolischen Raum. Ihre gemeinsamen Arbeiten gehen weit über eine bloße mimetische Abbildung der Natur hinaus: Durch das Zusammenspiel von Wahrnehmung, Erinnerung und kultureller Prägung verwandeln sie die Umwelt in ein komplexes Gefüge, in dem Natur, Individuum und imaginative Prozesse miteinander verschmelzen.
+</p>
+<p>
+  Als reisende Beobachter erkunden sie fremde Umgebungen und absorbieren sensorische Reize, die dem gewohnten Blick oft verborgen bleiben. Im schöpferischen Dialog als Frau-Mann-Binom hinterfragen sie konventionelle Begriffe von Autorschaft und erweitern den semantischen Raum des Werkes. So wird die Landschaft in ihrer Kunst zu einem intimistischen Terrain – ein Ort der Anpassung, der Identitätssuche und der tiefen Projektion des menschlichen Wesens in seiner Beziehung zur Natur.
+</p>
+</div>
+        <!-- Botón para la Merkliste -->
+        <button class="btn btn-outline-info btn-sm mt-2" onclick="addToMerkliste('Ana Bertina Aguilera Husch', 'Kunst', 'Erotische Fabelwesen')">
+          <i class="fas fa-bookmark mr-1"></i>Zur Merkliste hinzufügen
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Artista 2: Sabina Solot -->
+  <div class="col-md-6 mb-4">
+    <div class="content-box h-100 p-4 d-flex align-items-start" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(229, 228, 226, 0.2); border-radius: 8px; color: #fff;">
+      
+      <!-- Imagen de perfil fija -->
+      <img src="./Images-Projekt-Aurora/Sabina_portrait.png" class="rounded-circle mr-3" style="width: 100px; height: 100px; object-fit: cover; flex-shrink: 0;" alt="Sabina Solot">
+      
+      <!-- Contenedor único de texto -->
+      <div>
+        <span class="badge badge-info mb-2">Wald &amp; Kunst</span>
+        <h3 class="font-cinzel h4 mb-1">Sabina Solot – Vestiges That Breathe</h3>
+        <h4 class="h6 text-muted mb-3">Organische Dynamiken, Materie und Spuren der Erinnerung</h4>
+        <div id="Sabina Solot">
+        <p>
+          Sabina Solots künstlerische Praxis erweitert die Grenzen der bildnerischen Sprache durch gestische Erkundung und die direkte Auseinandersetzung mit der Materie. Anstelle einer bloßen Abbildung der Natur beschwört ihr Werk organische Prozesse herauf – Wachstum, Akkumulation und ständige Transformation.
+        </p>
+        <p>
+          In ihrer Serie <em>Vestiges That Breathe</em> erforscht Solot das Fortbestehen biologischer Strukturen im Spannungsfeld zwischen Erinnerung und Materie. Wie versteinertes Leben vereinen ihre Werke fraktale Oberflächen und mineralisch-botanische Hybridformen. Das Projekt versteht sich als eine Archäologie fundamentaler Naturstrukturen.
+        </p>
+</div>
+        <!-- Botón para la Merkliste -->
+ <button class="btn btn-outline-info btn-sm mt-2" 
+        onclick="addToMerklisteById('Sabina Solot', 'Sabina Solot: Vestiges That Breathe', 'Zeitgenössische Kunst')">
+  <i class="fas fa-bookmark mr-1"></i>Zur Merkliste hinzufügen
+</button>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
     </main>
 
     <!-- FOOTER (Común) -->
@@ -424,6 +799,11 @@
             </div>
         </div>
     </footer>
+    <script src="main.js"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
 
 </body>
 

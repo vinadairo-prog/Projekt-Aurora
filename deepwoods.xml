@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="deepwoods.xsl"?>
+<deepwoods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="deepwoods.xsd">
+
+    <article id="dw-01">
+        <kategorie>Ökosystem &amp; Myzel</kategorie>
+        <titel>Das Wood Wide Web</titel>
+        <untertitel>Die unterirdische Kommunikation der Bäume</untertitel>
+        <text>Hier kommt später dein recherchierter Haupttext über das Pilznetzwerk rein.</text>
+        <tag>Wissenschaft</tag>
+    </article>
+
+    <article id="dw-02">
+        <kategorie>Tiefe Wälder &amp; Mythen</kategorie>
+        <titel>Der Wald in der Kulturgeschichte</titel>
+        <untertitel>Symbolik und Transformation</untertitel>
+        <text>Zweiter Haupttext über die kulturelle Bedeutung des Waldes...</text>
+        <tag>Kultur</tag>
+    </article>
+
+</deepwoods>

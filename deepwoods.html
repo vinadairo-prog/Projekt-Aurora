@@ -359,7 +359,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./verlauf.html" target="_blank" rel="noopener">Verlauf und
-                            Ergebnisse</a>
+                            Merkliste</a>
                     </li>
                 </ul>
             </div>
@@ -418,7 +418,32 @@
             </div>
         </div>
     </footer>
+<script>
+  async function loadXMLXSL() {
+    // 1. Cargar el archivo XML y el archivo XSL
+    const xmlResponse = await fetch('deepwoods.xml');
+    const xslResponse = await fetch('deepwoods.xsl');
 
+    const xmlText = await xmlResponse.text();
+    const xslText = await xslResponse.text();
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+    const xslDoc = parser.parseFromString(xslText, 'text/xml');
+
+    // 2. Aplicar la transformación XSLT en el navegador
+    if (window.XSLTProcessor) {
+      const xsltProcessor = new XSLTProcessor();
+      xsltProcessor.importStylesheet(xslDoc);
+      const resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+      
+      // 3. Insertar el resultado transformado en el HTML
+      document.getElementById('xml-target').appendChild(resultDocument);
+    }
+  }
+
+  loadXMLXSL();
+</script>
 </body>
 
 </html>
