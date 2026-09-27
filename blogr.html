@@ -4,77 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurora - Título </title>
+    <title>Aurora - Magazin</title>
 
-    <!-- Bootstrap 4.6 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Urbanist:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Urbanist:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
     <style>
+        /* ESTRUCTURA BASE PARA EVITAR QUE EL FOOTER SE SUBA */
         html,
         body {
             height: 100%;
-        }
-
-        .main-content {
-            flex-grow: 1;
-            /* Esto hace que esta sección "crezca" y empuje el footer abajo */
-            padding: 60px 0;
-            background: linear-gradient(180deg, #0d110d 0%, #050705 100%);
+            margin: 0;
         }
 
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #0f172a;
-            /* Fondo oscuro forestal o #f8fafc */
-            color: #e5e4e2;
-            background-image: url(./Images-Projekt-Aurora/Bäume_Stadt.jpg);
-            background-repeat: no-repeat;
-            /* Evita que se cuadruplique */
-            background-size: cover;
-            /* Estira la imagen para que cubra TODO el ancho y alto */
-            background-position: center;
-            /* Centra la imagen para que no se corte feo */
-            background-attachment: fixed;
-            /* Hace que la imagen se quede quieta mientras haces scroll (estilo index) */
             font-family: 'Urbanist', sans-serif;
+            background-image: url('./Images-Projekt-Aurora/blog1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #022c22;
             overflow-x: hidden;
         }
 
-
-        .main-content {
-            flex-grow: 1;
-            padding: 60px 0;
-            /* Fondo muy transparente pero con luz */
-            background: rgba(255, 255, 255, 0.05) !important;
-            /* El secreto: desenfoque fuerte para que parezca neblina */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            /* Borde plata sutil para dar forma */
-            border-top: 1px solid rgba(229, 228, 226, 0.1);
-        }
-
-        /* NAVBAR: Sincronizada con el cielo del index */
+        /* NAVBAR CRISTAL */
         .navbar {
             width: 100%;
-            background-color: rgba(15, 25, 45, 0.7) !important;
+            background-color: rgba(15, 25, 45, 0.8) !important;
             backdrop-filter: blur(10px);
-            /* Efecto cristal */
             border-bottom: 1px solid rgba(229, 228, 226, 0.2);
             padding: 0.8rem 2rem;
             display: flex;
@@ -82,42 +52,33 @@
             align-items: center;
         }
 
-        /* Esto obligará a la lista interna del menú a repartirse uniformemente */
         .navbar-nav {
             display: flex !important;
             justify-content: space-around !important;
             width: 100%;
         }
 
+        /* CAMBIO: unifiqué el color de marca con el turquesa que usas en waldundkunst.html
+           (#40e0d0) en vez del verde #72cb10, para que "AURORA" se vea igual en ambas páginas */
+        .navbar-brand {
+            font-family: 'Cinzel', serif;
+            color: #40e0d0 !important;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
         .nav-link {
             color: #e5e4e2 !important;
-            /* Plata base */
-            transition: 0.4s ease;
+            transition: 0.4s;
         }
 
         .nav-link:hover {
-            color: #ffffff !important;
-            text-shadow: 0 0 12px rgba(229, 228, 226, 0.6) !important;
+            color: #ffffbb !important;
             transform: scale(1.05);
         }
 
-        /* Icono menú móvil (Las 3 rayitas brillantes) */
-        .navbar-toggler-icon {
-            filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
-        }
-
-        .navbar-brand {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: #40e0d0 !important;
-            /* Turquesa Aurora o bien color: #e5e4e2 !important; */
-            letter-spacing: 2px;
-        }
-
-
         .dropdown-menu {
-            background-color: rgba(20, 30, 55, 0.85);
-            /* Azul noche */
+            background-color: rgba(20, 30, 55, 0.9);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(229, 228, 226, 0.2);
         }
@@ -127,380 +88,174 @@
         }
 
         .dropdown-item:hover {
-            background-color: rgba(64, 224, 208, 0.2);
-            /* Aguamarina muy suave */
+            background-color: rgba(114, 203, 16, 0.3);
             color: #fff !important;
         }
 
-        /* JUMBOTRON BASE (El fondo dinámico se define en el HTML con style inline) */
+        /* JUMBOTRON HERO */
         .jumbotron-hero {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
             position: relative;
             padding: 100px 0;
             margin-bottom: 0;
-            border-radius: 0;
-            background: radial-gradient(circle at center,
-                    rgba(255, 255, 255, 0.1) 0%,
-                    rgba(10, 35, 28, 0.4) 40%,
-                    rgba(5, 15, 10, 0.7) 100%) !important;
-            /* color: #e5e4e2; */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        }
-
-        .jumbotron-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Bajamos la opacidad a 0.3 para que la foto sea la protagonista */
-            background-color: rgba(15, 23, 42, 0.35);
-            z-index: 1;
-        }
-
-        .hero-title {
-            /* ... (mantenemos lo anterior pero con este resplandor) */
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero-container {
-            position: relative;
-            z-index: 2;
+            background: rgba(15, 23, 42, 0.4);
             text-align: center;
         }
 
         .hero-title {
             font-family: 'Cinzel', serif;
-            letter-spacing: 6px;
-            font-weight: 500;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(229, 228, 226, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
 
-
+        /* CAMBIO: main-content más transparente (0.3 → 0.15) y con menos blur
+           (25px → 14px) para que la foto de fondo se note más y distraiga menos
+           por exceso de difuminado, tal como te comentó tu amigo */
         .main-content {
             flex-grow: 1;
             padding: 60px 0;
-
-            /* CAMBIO CLAVE: Usamos un azul noche muy transparente (60%) */
-            /* En lugar de blanco, usamos (15, 23, 42) */
-            background: rgba(15, 23, 42, 0.6) !important;
-
-            /* El blur debe ser potente para que se sienta el "Milchige Effekt" */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-
-            /* Un borde superior para separar el Hero del contenido */
-            border-top: 1px solid rgba(229, 228, 226, 0.15);
-
-            /* Un ligero sombreado interno para dar profundidad */
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .image-wrapper {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .image-wrapper img {
+            background: rgba(90, 181, 7, 0.15) !important;
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
-        .image-wrapper:hover img {
-            transform: scale(1.05);
+        /* CAMBIO: caja del manifiesto — pasé de "vidrio crema" a "vidrio oscuro con
+           borde dorado", coherente con la paleta mística/dorada de waldundkunst.html
+           en vez de una isla visual verde/crema que no combinaba con el resto del sitio */
+        .editorial-manifesto-box {
+            background: rgba(10, 20, 18, 0.6) !important;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(217, 194, 126, 0.4);
+            /* dorado tenue */
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            color: #ece7f7;
+            margin-bottom: 60px;
         }
 
-        .hero-subtitle {
-            color: rgba(229, 228, 226, 0.85) !important;
-            /* Plata con 85% de opacidad */
-            font-size: 1.25rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+        .manifesto-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: #d9c27e;
+            /* dorado, mismo que --gold-mystic en waldundkunst.html */
         }
 
-        /* FOOTER */
-
-
-        footer {
-            background: rgba(5, 15, 10, 0.8) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 0;
-            margin-top: auto;
-            /* Empuja el footer al final */
-        }
-
-        .footer-link {
-            color: #e5e4e2 !important;
+        /* ARTÍCULOS MAGAZÍN */
+        .magazine-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 50px;
+            margin-bottom: 50px;
             transition: 0.3s;
         }
 
-        .footer-link:hover {
-            color: #40e0d0 !important;
-            /* Brillo Aguamarina */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            /* Esto separa el logo de los links y los links del copyright */
-        }
-
-        .footer-content .row {
-            margin: 10px 0;
-            /* Espacio arriba y abajo de la fila de links */
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            /* Centra las columnas si sobran espacios */
-        }
-
-        .footer-logo {
-            margin-top: 5px;
-            font-size: 1.6rem;
-            letter-spacing: 6px;
-        }
-
-        .copyright {
-            font-size: 0.8rem;
-            opacity: 0.6;
-            margin-top: 10px;
-        }
-
-        /* Este es el balance perfecto: Oscuro para leer, transparente para ver la foto */
-        .glass-card {
-            background: rgba(20, 25, 35, 0.65) !important;
-            /* Azul/Gris oscuro */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(229, 228, 226, 0.2);
+        .magazine-row:hover {
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 15px;
-            transition: 0.4s;
-            padding: 20px;
-            text-align: center;
+        }
+
+        .editorial-title {
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CAMBIO: blog-meta y el texto de los artículos pasan de verde muy oscuro
+           (#042f2e, casi invisible sobre el fondo verde traslúcido) a tonos claros
+           con sombra, ya que estos bloques no tienen caja propia detrás */
+        .blog-meta {
+            color: #d4f5b8 !important;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .magazine-row p {
+            color: #f4f9f0 !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-editorial-link {
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+        }
+
+        .btn-editorial-link:hover {
+            color: #d9c27e;
+            text-decoration: none;
+            padding-left: 10px;
+        }
+
+        .editorial-img-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 2px solid #fff;
+        }
+
+        .editorial-img-frame img {
+            width: 100%;
+            display: block;
+        }
+
+        footer {
+            background: rgba(5, 15, 10, 0.9) !important;
+            padding: 25px 0;
             color: #e5e4e2;
+            width: 100%;
         }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            background: rgba(30, 40, 60, 0.8) !important;
-            /* Se aclara un poco al tocarlo */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Sobrescribimos el fondo del cuerpo para el Blog */
-#blog-page {
-    background: #022c22 !important; /* Verde pino muy profundo */
-}
-
-/* Tarjetas con cristal Aguamarina */
-.blog-card {
-    background: rgba(13, 148, 136, 0.15) !important; /* Aguamarina transparente */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(52, 211, 153, 0.3); /* Borde Verde Manzano suave */
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.blog-card:hover {
-    transform: translateX(5px);
-    background: rgba(13, 148, 136, 0.25) !important;
-    border-color: #34d399; /* El borde brilla más en verde manzana */
-    box-shadow: 0 10px 25px rgba(4, 47, 46, 0.5);
-}
-
-/* Detalles estéticos */
-.badge-aquamarine {
-    background-color: rgba(45, 212, 191, 0.2);
-    color: #2dd4bf;
-    border: 1px solid #2dd4bf;
-}
-
-.text-mint {
-    color: #a7f3d0;
-}
-
-.btn-outline-mint {
-    color: #34d399;
-    border-color: #34d399;
-    background: transparent;
-}
-
-.btn-outline-mint:hover {
-    background: #34d399;
-    color: #022c22;
-}
-
-.blog-img-wrapper {
-    height: 100%;
-    min-height: 180px;
-    overflow: hidden;
-}
-
-.blog-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.sidebar-card {
-    background: rgba(4, 47, 46, 0.4) !important;
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    border: 1px solid rgba(167, 243, 208, 0.1);
-}
-
-/* Un fondo verde pino-océano orgánico y oscuro */
-#blog-page {
-    background: #022c22 !important;
-}
-
-/* Las secciones no tienen fondo de tarjeta, se separan con líneas sutiles */
-.sequential-section {
-    border-bottom: 1px solid rgba(52, 211, 153, 0.1);
-    transition: all 0.4s ease;
-}
-
-.sequential-section:hover {
-    background: rgba(13, 148, 136, 0.05); /* Un reflejo aguamarina casi invisible al pasar el ratón */
-}
-
-/* El marco de la imagen es más artístico, como un cuadro de galería */
-.editorial-img-frame {
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(52, 211, 153, 0.2);
-    position: relative;
-}
-
-.editorial-img-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(20%) contrast(110%); /* Toque ligeramente artístico */
-}
-
-/* Meta información (fecha y categoría) */
-.blog-meta {
-    letter-spacing: 3px;
-    font-weight: 600;
-}
-
-.text-mint {
-    color: #34d399 !important; /* Verde manzana/menta vibrante */
-}
-
-/* Título del artículo */
-.editorial-title {
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-/* El enlace de leer más es solo un texto flotante elegante */
-.btn-editorial-link {
-    color: #67e8f9; /* Aguamarina brillante */
-    text-decoration: none;
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-}
-
-.btn-editorial-link:hover {
-    color: #34d399; /* Cambia a verde manzana */
-    padding-left: 10px; /* Pequeño efecto de desplazamiento */
-    text-decoration: none;
-}
     </style>
 </head>
-<!-- cambio -->
 
-<body>
+<body id="blog-page">
 
-    <!--  BARRA DE NAVEGACIÓN (Común) -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">AURORA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
                 aria-controls="mainNav" aria-label="Toggle navigation">
-                <!-- veri si agrego <div class="content-wrapper">  -->
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav w-100 text-center "> <!-- ml-auto? -->
-
-                    <!-- Dropdown : Info -->
+                <ul class="navbar-nav w-100 text-center">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Infos
-                        </a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Infos</a>
                         <div class="dropdown-menu" aria-labelledby="infoDropdown">
-                            <a class="dropdown-item" href="./blog.html" target="_blank" rel="noopener">Info Blog</a>
-                            <a class="dropdown-item" href="./deepwoods.html" target="_blank" rel="noopener">Deep
-                                Woods</a>
-                            <a class="dropdown-item" href="./baeumestadt.html" target="_blank" rel="noopener">Bäume in der
-                                Stadt</a>
+                            <a class="dropdown-item" href="./blog.html">Info Blog</a>
+                            <a class="dropdown-item" href="./deepwoods.html">Deep Woods</a>
+                            <a class="dropdown-item" href="./baeumestadt.html">Bäume in der Stadt</a>
+                            <a class="dropdown-item" href="./waldundkunst.html">Wald und Kunst</a>
                         </div>
                     </li>
-                    <!-- Dropdown: Ciencia -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Wissenschaft
-                        </a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wissenschaft</a>
                         <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./gesundheit.html" target="_blank" rel="noopener">Wald und
-                                Gesundheit</a>
-                            <a class="dropdown-item" href="./krankheiten.html" target="_blank"
-                                rel="noopener">Waldkrankheiten</a>
-                            <a class="dropdown-item" href="./klima.html" target="_blank" rel="noopener">Wald und
-                                Klima</a>
+                            <a class="dropdown-item" href="./gesundheit.html">Wald und Gesundheit</a>
+                            <a class="dropdown-item" href="./krankheiten.html">Waldkrankheiten</a>
+                            <a class="dropdown-item" href="./klima.html">Wald und Klima</a>
                         </div>
                     </li>
-
-                    <!-- Dropdown  Economía -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="economyDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Wirtschaft
-                        </a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wirtschaft</a>
                         <div class="dropdown-menu" aria-labelledby="economyDropdown">
-                            <a class="dropdown-item" href="./ressourcen.html" target="_blank" rel="noopener">Energie und
-                                Ressourcen</a>
-                            <a class="dropdown-item" href="./holzwirtschaft.html" target="_blank"
-                                rel="noopener">Holzwirtschaft</a>
+                            <a class="dropdown-item" href="./ressourcen.html">Energie und Ressourcen</a>
+                            <a class="dropdown-item" href="./holzwirtschaft.html">Holzwirtschaft</a>
                         </div>
                     </li>
-
-                    <!-- Dropdown: Simulation -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="scienceDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Eco-Simulation
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="scienceDropdown">
-                            <a class="dropdown-item" href="./sandbox.html" target="_blank" rel="noopener">Sandbox</a>
-                            <a class="dropdown-item" href="./herausforderungen.html" target="_blank"
-                                rel="noopener">Herausforderungen</a>
-                            <a class="dropdown-item" href="./ergebnisse.html" target="_blank"
-                                rel="noopener">Ergegnisse</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="simulationDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eco-Simulation</a>
+                        <div class="dropdown-menu" aria-labelledby="simulationDropdown">
+                            <a class="dropdown-item" href="./sandbox.html">Sandbox</a>
+                            <a class="dropdown-item" href="./herausforderungen.html">Herausforderungen</a>
+                            <a class="dropdown-item" href="./ergebnisse.html">Ergebnisse</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -512,104 +267,101 @@
         </div>
     </nav>
 
-    <!-- HERO / JUMBOTRON SECTION (Común pero dinámico)
-         Cambiando el style inline de background-image puedes usar fotos distintas por página.-->
-    <header class="jumbotron-hero" style="background-image: url('./assets/images/default-bg.jpg');">
-        <div class="container hero-container">
-            <!-- Título dinámico de la subpágina -->
-            <h1 class="hero-title">Bäume und Stadt</h1>
-            <p class="hero-subtitle">Natur aus dem Asphalt</p>
+    <header class="jumbotron-hero">
+        <div class="container text-center" style="position:relative; z-index:2;">
+            <h1 class="hero-title">AURORA <span style="color:#ffffbb;">MAGAZIN</span></h1>
+            <p style="color:#e5e4e2; font-family:'Cinzel'; letter-spacing:3px;">Gedanken über Technologie, Natur und
+                urbanes Leben.</p>
         </div>
     </header>
 
-    <!--  CONTENIDO ESPECÍFICO DE LA PÁGINA (Dinámico) Agora BBRZ Platform -->
-   <main class="main-content" id="blog-page">
-    <div class="container my-5">
-        
-        <!-- CABECERA DE REVISTA -->
-        <div class="row text-center mb-5 pb-5" style="border-bottom: 1px solid rgba(52, 211, 153, 0.2);">
-            <div class="col-12">
-                <h1 class="hero-title" style="color: #67e8f9; font-size: 3.5rem; text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);">
-                    AURORA <span>MAGAZIN</span>
-                </h1>
-                <p class="lead text-light" style="font-family: 'Cinzel', serif; letter-spacing: 2px;">
-                    Gedanken über Technologie, Natur und urbanes Leben.
-                </p>
-            </div>
-        </div>
+    <main class="main-content">
+        <div class="container">
 
-        <!-- ARTÍCULO 1: ENFOQUE TEXTUAL ABIERTO (IMAGEN IZQUIERDA, TEXTO DERECHA) -->
-        <div class="row align-items-center mb-5 py-4 sequential-section">
-            <div class="col-md-5">
-                <div class="editorial-img-frame">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5549013778544321307" alt="Bosque y datos">
-                </div>
-            </div>
-            <div class="col-md-7 pl-md-5">
-                <div class="blog-meta text-mint small mb-2">WISSENSCHAFT // 19. JUNI 2026</div>
-                <h2 class="editorial-title" style="color: #2dd4bf; font-family: 'Cinzel', serif;">
-                    Das geheime Netzwerk der Wiener Bäume
-                </h2>
-                <p class="text-light mt-3" style="line-height: 1.8; opacity: 0.9;">
-                    Bajo el asfalto de Viena ruge una conversación silenciosa. Los árboles de la ciudad no son entes aislados; se conectan, intercambian nutrientes y se alertan del estrés hídrico a través de filamentos microscópicos de micelio. ¿Cómo cambia esto nuestra perspectiva sobre el urbanismo resiliente?
-                </p>
-                <a href="#" class="btn-editorial-link mt-3 d-inline-block">Weiterlesen &rarr;</a>
-            </div>
-        </div>
-
-        <!-- ARTÍCULO 2: INVERTIDO (TEXTO IZQUIERDA, IMAGEN DERECHA) -->
-        <div class="row align-items-center mb-5 py-4 sequential-section">
-            <div class="col-md-7 pr-md-5 order-2 order-md-1">
-                <div class="blog-meta text-mint small mb-2">ECO-SIMULATION // 12. JUNI 2026</div>
-                <h2 class="editorial-title" style="color: #2dd4bf; font-family: 'Cinzel', serif;">
-                    Algorithmen statt Äxte
-                </h2>
-                <p class="text-light mt-3" style="line-height: 1.8; opacity: 0.9;">
-                    ¿Puede el código predecir los susurros del bosque? La integración de Python en nuestra Sandbox permite simular cómo el cambio climático afecta el crecimiento de las especies nativas. Diseñar el futuro verde ya no es una utopía analógica, sino un lienzo digital interactivo.
-                </p>
-                <a href="#" class="btn-editorial-link mt-3 d-inline-block">Weiterlesen &rarr;</a>
-            </div>
-            <div class="col-md-5 order-1 order-md-2">
-                <div class="editorial-img-frame">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12028604753549646399" alt="Tecnología verde">
-                </div>
-            </div>
-        </div>
-
-    </div>
-</main>
-    <!-- FOOTER (Común) -->
-    <footer class="footer ">
-        <div class="container text-center">
-            <div class="footer-content">
-                <div class="footer-logo" style="font-family: 'Cinzel', serif;">AURORA</div>
-
-                <div class="row w-100">
-                    <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Über mich</a>
-                    </div>
-                    <div class="col-md-4"><a class="footer-link" href="./impressum.html" target="_blank"
-                            rel="noopener">Impressum</a></div>
-                    <div class="col-md-4"><a class="footer-link" href="#" target="_blank" rel="noopener">Datenschutz</a>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="editorial-manifesto-box">
+                        <h2 class="manifesto-title text-center mb-4">Einleitung: Das Aurora-Projekt</h2>
+                        <p style="text-align: justify; line-height: 1.8;">
+                            Willkommen auf der Plattform von <strong>Projekt Aurora</strong>. Diese
+                            Plattform ist mehr als ein digitales Archiv: Sie ist eine transdisziplinäre Brücke, auf der
+                            Forstwissenschaft und Softwareentwicklung mit künstlerischer Sensibilität und
+                            Tiefenpsychologie zusammenkommen. Unser Ziel ist es, das verborgene grüne Netzwerk unserer
+                            Umwelt zu entschlüsseln, von den unberührten Ökosystemen der Tiefenwälder bis hin zur
+                            Resilienz urbaner Bäume, die sich in Metropolen wie Wien Stück für Stück den Asphalt
+                            zurückerobern.
+                        </p>
+                        <p style="text-align: justify; line-height: 1.8;">
+                            Mit moderner Software-Architektur (Java/Spring Boot) und interaktiven Eco-Simulationen
+                            machen wir dabei etwas sichtbar, das sonst leicht übersehen wird: biologische Kommunikation.
+                            Bäume senden zum Beispiel chemische Botenstoffe aus, sogenannte Terpene (flüchtige
+                            Duftstoffe, die unter anderem auch das menschliche Immunsystem beeinflussen können). Wir
+                            verstehen solche Signale als eine Art Zeichen im Sinne der Biosemiotik, jener Lehre, die
+                            untersucht, wie Lebewesen sich über Zeichen verständigen. Mehr dazu, mit direktem Bezug zum
+                            Unbewussten, finden Sie im Bereich Wald und Kunst. So wird aus Projekt Aurora ein Werkzeug,
+                            das informiert und zugleich beruhigt, und das kritisch nach echter Begrünung fragt:
+                            Grünflächen, die wirklich Platz für tiefe Wurzeln bieten, statt nur an der Oberfläche grün
+                            zu wirken. Mehr dazu im Bereich Bäume in der Stadt.
+                        </p>
+                        <p style="text-align: justify; line-height: 1.8;">
+                            Die Plattform gliedert sich in fünf Bereiche: <strong>Infos</strong> bündelt dieses Magazin
+                            sowie die Sektionen Bäume in der Stadt, Deep Woods und Wald und Kunst;
+                            <strong>Wissenschaften</strong> widmet sich Gesundheit, Waldkrankheiten und Klima;
+                            <strong>Wirtschaft</strong> beleuchtet Ressourcen und Holzwirtschaft kritisch; und im
+                            Bereich <strong>Eco-Simulation</strong> können Sie selbst einen digitalen Wald gestalten.
+                            Jede gespeicherte Erkenntnis läuft in der <strong>Merkliste</strong> zusammen, Ihrem
+                            persönlichen, exportierbaren Forschungsprotokoll.
+                        </p>
                     </div>
                 </div>
-
-                <p class="copyright">&copy; 2026 Adair Araujo Valenzuela</p>
             </div>
+
+            <div class="row align-items-center magazine-row">
+                <div class="col-md-5">
+                    <div class="editorial-img-frame">
+                        <img src="./Images-Projekt-Aurora/Bäume_Stadt.jpg" alt="Wiener Bäume">
+                    </div>
+                </div>
+                <div class="col-md-7 pl-md-5">
+                    <div class="blog-meta small mb-2">WISSENSCHAFT // 19. JUNI 2026</div>
+                    <h3 class="editorial-title">Das geheime Netzwerk der Wiener Bäume</h3>
+                    <p>Unter dem Asphalt Wiens rauscht ein stilles Gespräch. Bäume sind keine isolierten Wesen – sie
+                        verbinden sich über Myzelfäden zu einem unterirdischen Netzwerk, das Nährstoffe, Warnsignale und
+                        sogar so etwas wie kollektive Fürsorge weiterleitet...</p>
+                    <a href="#" class="btn-editorial-link">Weiterlesen &rarr;</a>
+                </div>
+            </div>
+
+            <div class="row align-items-center magazine-row">
+                <div class="col-md-7 pr-md-5 order-2 order-md-1">
+                    <div class="blog-meta small mb-2">ECO-SIMULATION // 12. JUNI 2026</div>
+                    <h3 class="editorial-title">Algorithmen statt Äxte</h3>
+                    <p>Kann Code das Flüstern des Waldes vorhersagen? Die Integration von Python erlaubt es, die grüne
+                        Zukunft als interaktives digitales Gemälde zu simulieren...</p>
+                    <a href="#" class="btn-editorial-link">Weiterlesen &rarr;</a>
+                </div>
+                <div class="col-md-5 order-1 order-md-2">
+                    <div class="editorial-img-frame">
+                        <img src="./Images-Projekt-Aurora/portada_2.jpg" alt="Eco Simulation">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <div style="font-family:'Cinzel'; font-size:1.6rem; letter-spacing:6px; margin-bottom:15px;">AURORA</div>
+            <div class="row">
+                <div class="col-md-4"><a href="uebermich.html" style="color:#e5e4e2;">Über mich</a></div>
+                <div class="col-md-4"><a href="./impressum.html" style="color:#e5e4e2;">Impressum</a></div>
+                <div class="col-md-4"><a href="./datenschutz.html" style="color:#e5e4e2;">Datenschutz</a></div>
+            </div>
+            <p style="font-size:0.8rem; opacity:0.6; margin-top:20px;">&copy; 2026 Adair Araujo Valenzuela</p>
         </div>
     </footer>
 
 </body>
 
 </html>
-<!--  Pasos para crear tus archivos partiendo de este template:
-
-2. **Cómo duplicarlo para una subpágina nueva:**
-   * Haz una copia de `template.html` y cámbiale el nombre al de tu subpágina (ej: `krankheiten.html`).
-3. **Qué debes modificar en cada copia:**
-   * **El título en el `<head>` (línea 7):** Cambia `[Nombre de la Página]` por el título correcto (ej: `Waldkrankheiten`).
-   * **La imagen de fondo en el Jumbotron (línea 138):** Verás que el elemento `<header>` tiene un estilo inline: `style="background-image: url('./assets/images/default-bg.jpg');"`. Solo tienes que cambiar esa ruta por la imagen correspondiente a esa sección específica.
-   * **El texto del Jumbotron (líneas 141-142):** Reemplaza `[Título de la Subpágina]` y su descripción corta.
-   * **El Bloque de Contenido Principal (líneas 148 a 161):** Elimina el div de ejemplo y escribe o pega aquí el contenido específico (las grids, columnas, o información de esa sección).
-
-¡Todo lo demás (navbar, footer y los estilos base) se quedará intacto y perfectamente estilizado en cada página que dupliques! Dime si la estructura te convence y cuál es el siguiente paso que deseas realizar.
- -->
